@@ -96,86 +96,120 @@ const contactForm = document.getElementById("contactForm")
 const successModal = document.getElementById("successModal")
 
 if (contactForm) {
-contactForm.addEventListener("submit", (e) => {
-    e.preventDefault()
+    contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
 
     // Get form data
-    const formData = new FormData(contactForm)
-    const data = Object.fromEntries(formData)
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData);
 
     // Validate required fields
-    const requiredFields = ["fullName", "phone", "email", "product"]
-    let isValid = true
+    const requiredFields = ["fullName", "phone", "email", "product"];
+
+    let isValid = true;
 
     requiredFields.forEach((field) => {
-    const input = document.getElementById(field)
+    const input = document.querySelector(`[name='${field}']`);
     if (!data[field] || data[field].trim() === "") {
-        input.style.borderColor = "#ef4444"
-        isValid = false
+        input.style.borderColor = "var(--error-color)";
+        isValid = false;
     } else {
-        input.style.borderColor = "#22c55e"
+        input.style.borderColor = "var(--accent-color)";
     }
-    })
+    });
 
     // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    const emailInput = document.getElementById("email")
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailInput = document.querySelector("[name='email']");
     if (data.email && !emailRegex.test(data.email)) {
-    emailInput.style.borderColor = "#ef4444"
-    isValid = false
+    emailInput.style.borderColor = "var(--error-color)";
+    isValid = false;
     }
 
-    // Validate phone format (Vietnamese phone number)
-    const phoneRegex = /^(0|\+84)[0-9]{9,10}$/
-    const phoneInput = document.getElementById("phone")
-    if (data.phone && !phoneRegex.test(data.phone.replace(/\s/g, ""))) {
-    phoneInput.style.borderColor = "#ef4444"
-    isValid = false
+    // Validate phone format (chỉ số, tối đa 12 ký tự)
+    const phoneRegex = /^\d{1,12}$/;
+    const phoneInput = document.querySelector("[name='phone']");
+    if (data.phone && !phoneRegex.test(data.phone)) {
+    phoneInput.style.borderColor = "var(--error-color)";
+    isValid = false;
     }
 
     if (!isValid) {
-    // Show error message
-    showNotification("Vui lòng kiểm tra lại thông tin đã nhập!", "error")
-    return
+    showNotification("Vui lòng kiểm tra lại thông tin đã nhập!", "error");
+    return;
     }
 
     // Show loading state
-    const submitBtn = contactForm.querySelector('button[type="submit"]')
-    const originalText = submitBtn.innerHTML
-    submitBtn.innerHTML = '<div class="loading"></div> Đang gửi...'
-    submitBtn.disabled = true
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<div class="loading"></div> Đang gửi...';
+    submitBtn.disabled = true;
 
-    // Simulate API call
-    setTimeout(() => {
-    // Reset button
-    submitBtn.innerHTML = originalText
-    submitBtn.disabled = false
+    // Tạo nội dung email HTML
+    const _emailHtml = `
+    <h3>Thông tin đăng ký từ khách hàng</h3>
+    <p><strong>Họ Tên:</strong> ${data.fullName}</p>
+    <p><strong>Số điện thoại:</strong> ${data.phone}</p>
+    <p><strong>Email:</strong> ${data.email}</p>
+    <p><strong>Sản phẩm đang bán trên sàn:</strong> ${data.product}</p>
+    `;
 
-    // Show success modal
-    showSuccessModal()
+    console.log(_emailHtml);
 
-    // Reset form
-    contactForm.reset()
+    const _to = "tannguyen0916@gmail.com";
+    const _cc = "";
+    const _displayName = "XVNET-Noreply";
+    const _subject =
+    "Thông tin đăng ký tư vấn từ khách hàng: " + location.hostname;
 
-    // Reset input borders
-    requiredFields.forEach((field) => {
-        document.getElementById(field).style.borderColor = "#e5e7eb"
-    })
+    // Gửi Ajax
+    $.ajax({
+    url: "https://mangxuyenviet.vn/login.aspx/PostForm",
+    type: "POST",
+    data: JSON.stringify({
+        funcParam: _emailHtml,
+        to: _to,
+        cc: _cc,
+        displayName: _displayName,
+        title: _subject,
+    }),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: function (response) {
+        // Reset button
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
 
-    // Log form data (in real app, send to server)
-    console.log("Form submitted:", data)
+        if (response.d === "abc") {
+        showSuccessModal();
+        contactForm.reset();
 
-    // Google Analytics event (if GA is implemented)
-    const gtag = window.gtag // Declare gtag variable
-    if (typeof gtag !== "undefined") {
-        gtag("event", "form_submit", {
-        event_category: "engagement",
-        event_label: "contact_form",
-        })
-    }
-    }, 2000)
-})
+        requiredFields.forEach((field) => {
+            document.querySelector(`[name='${field}']`).style.borderColor =
+            "var(--accent-color)";
+        });
+
+        // Google Analytics event
+        if (typeof gtag !== "undefined") {
+            gtag("event", "form_submit", {
+            event_category: "engagement",
+            event_label: "contact_form",
+            });
+        }
+        } else {
+        showNotification("Gửi thất bại, vui lòng thử lại!", "error");
+        }
+    },
+    error: function (xhr, status, error) {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        console.error("Lỗi khi gửi:", error);
+        showNotification("Gửi không thành công, vui lòng thử lại!", "error");
+    },
+    });
+});
 }
+
 
 // Show Success Modal
 function showSuccessModal() {
@@ -315,19 +349,19 @@ const timer = setInterval(() => {
 // Remove duplicate Intersection Observer as we're using AOS
 // This prevents animation conflicts
 
-// Observe elements for animation
-document.addEventListener("DOMContentLoaded", () => {
-const animateElements = document.querySelectorAll(".benefit-card, .template-card, .comparison-table")
-animateElements.forEach((el) => observer.observe(el))
-})
+// Observe elements for animation (mục đích: để khi scroll đến các phần tử này thì sẽ có hiệu ứng)
+// document.addEventListener("DOMContentLoaded", () => {
+// const animateElements = document.querySelectorAll(".benefit-card, .template-card, .comparison-table")
+// animateElements.forEach((el) => observer.observe(el))
+// })
 
 // Template Demo Functionality
-document.addEventListener("click", (e) => {
-if (e.target.textContent === "Xem demo") {
-    e.preventDefault()
-    showNotification("Demo sẽ được cập nhật sớm!", "info")
-}
-})
+// document.addEventListener("click", (e) => {
+// if (e.target.textContent === "Xem demo") {
+//     e.preventDefault()
+//     showNotification("Demo sẽ được cập nhật sớm!", "info")
+// }
+// })
 
 // Lazy Loading for Images
 if ("IntersectionObserver" in window) {
