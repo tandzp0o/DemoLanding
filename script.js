@@ -4,15 +4,58 @@ const AOS = window.AOS // Declare AOS variable
 
 // Initialize AOS (Animate On Scroll)
 document.addEventListener("DOMContentLoaded", () => {
-if (typeof AOS !== "undefined") {
-    AOS.init({
-    duration: 800,
-    easing: "ease-in-out",
-    once: true,
-    offset: 100,
-    })
-}
-})
+    if (typeof AOS !== "undefined") {
+        // Disable AOS on mobile
+        const isMobile = window.innerWidth < 768;
+        
+        // Reset AOS first to prevent conflicts
+        if (AOS) {
+            AOS.refreshHard();
+        }
+        
+        AOS.init({
+            duration: 800,
+            easing: "ease-in-out",
+            once: false, // Cho phép chạy lại khi scroll
+            offset: 100,
+            disable: isMobile,
+            startEvent: 'load',
+            mirror: true, // Bật mirror để có hiệu ứng ngược lại khi scroll lên
+            // Thêm các animation tùy chỉnh
+            // Khi scroll xuống
+            'aos:in': 'aos-animate',
+            // Khi scroll lên
+            'aos:out': 'aos-animate-out',
+            // Khi kết thúc animation
+            'aos:in:done': 'aos-animate-done',
+            'aos:out:done': 'aos-animate-out-done'
+        });
+        
+        // Thêm style cho hiệu ứng scroll lên
+        const style = document.createElement('style');
+        style.textContent = `
+            /* Hiệu ứng mặc định khi scroll xuống */
+            [data-aos] {
+                opacity: 0;
+                transition-property: opacity, transform;
+                will-change: transform, opacity;
+            }
+            
+            /* Hiệu ứng khi scroll lên */
+            [data-aos].aos-animate-out {
+                opacity: 0 !important;
+                transform: translateY(50px) !important;
+            }
+            
+            /* Hiệu ứng khi scroll xuống */
+            [data-aos].aos-animate {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+});
 
 // Mobile Navigation Toggle
 const navToggle = document.querySelector(".nav-toggle")
@@ -269,19 +312,8 @@ const timer = setInterval(() => {
 }, 16)
 }
 
-// Intersection Observer for animations
-const observerOptions = {
-threshold: 0.1,
-rootMargin: "0px 0px -50px 0px",
-}
-
-const observer = new IntersectionObserver((entries) => {
-entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-    entry.target.classList.add("fade-in")
-    }
-})
-}, observerOptions)
+// Remove duplicate Intersection Observer as we're using AOS
+// This prevents animation conflicts
 
 // Observe elements for animation
 document.addEventListener("DOMContentLoaded", () => {

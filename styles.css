@@ -5,6 +5,14 @@
     box-sizing: border-box;
 }
 
+:root{
+    --primary-color: #e53e3e;
+    --secondary-color: #ff8c00;
+    --accent-color: #22c55e;
+    --text-color: #333;
+    --background-color: #fff;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -12,7 +20,7 @@ html {
 body {
     font-family: "Inter", sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--text-color);
     overflow-x: hidden;
 }
 
@@ -47,12 +55,14 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     /* Updated brand color to match logo red */
-    color: #e53e3e;
+    color: var(--primary-color);
 }
 
-.nav-brand i {
+.nav-brand img {
     margin-right: 0.5rem;
     font-size: 1.8rem;
+    width: 80px;
+    height: auto;
 }
 
 .nav-menu {
@@ -62,13 +72,13 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: #333;
+    color: var(--text-color);
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #e53e3e;
+    color: var(--primary-color);
 }
 
 .nav-toggle {
@@ -80,7 +90,7 @@ body {
 .nav-toggle span {
     width: 25px;
     height: 3px;
-    background: #333;
+    background: var(--text-color);
     margin: 3px 0;
     transition: 0.3s;
 }
@@ -89,11 +99,12 @@ body {
 .hero {
     position: relative;
     /* Reduced min-height to make hero section more compact */
-    min-height: 80vh;
+    min-height: 120vh;
     display: flex;
     align-items: center;
     /* Updated gradient to use logo colors: red to orange */
-    background: linear-gradient(135deg, #e53e3e 0%, #ff8c00 100%);
+    /* background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); */
+    background-color: var(--background-color);
     overflow: hidden;
 }
 
@@ -103,39 +114,72 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    /* Updated background gradient to match logo colors */
-    background: linear-gradient(135deg, #e53e3e 0%, #ff8c00 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    overflow: hidden;
+}
+
+.particles-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    will-change: transform;
+    animation: rotate 60s linear infinite;
 }
 
 .hero-particles {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-    animation: float 20s ease-in-out infinite;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    animation: float 15s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 @keyframes float {
-    0%,
-    100% {
-    transform: translateY(0px) rotate(0deg);
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.9;
     }
     50% {
-    transform: translateY(-20px) rotate(180deg);
+        transform: translateY(-20px);
+        opacity: 1;
     }
 }
 
-.hero-content {
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.hero-top{
+    text-align: center;
+}
+
+.hero-bottom {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
     position: relative;
     z-index: 2;
-    /* Reduced padding to make hero more compact */
-    padding: 4rem 0 2rem;
+    padding: 10px 0 2rem;
 }
 
 .hero-left {
@@ -159,7 +203,7 @@ body {
 
 .highlight-orange {
     /* Updated orange highlight to match logo orange */
-    color: #ff8c00;
+    color: var(--secondary-color);
     text-shadow: 0 0 20px rgba(255, 140, 0, 0.5);
 }
 
@@ -190,17 +234,19 @@ body {
     align-items: center;
     margin-bottom: 0.8rem;
     font-size: 1.1rem;
+    color: var(--text-color);
 }
 
 .pain-list i {
     /* Updated pain point icon color to logo red */
-    color: #e53e3e;
+    color: var(--primary-color);
     margin-right: 1rem;
     font-size: 1.2rem;
 }
 
 .hero-subtitle {
     font-size: 1.2rem;
+    color: var(--text-color);
     /* Reduced margin for more compact spacing */
     margin-bottom: 1.5rem;
     opacity: 0.9;
@@ -214,6 +260,7 @@ body {
     margin-top: 0.5rem;
     font-size: 0.9rem;
     opacity: 0.8;
+    color: var(--text-color);
 }
 
 /* Buttons */
@@ -233,7 +280,7 @@ body {
 
 .btn-primary {
     /* Updated button gradient to use logo colors */
-    background: linear-gradient(45deg, #e53e3e, #ff8c00);
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     color: white;
     /* Updated shadow color to match new gradient */
     box-shadow: 0 4px 15px rgba(229, 62, 62, 0.4);
@@ -247,7 +294,7 @@ body {
 
 .btn-secondary {
     background: rgba(255, 255, 255, 0.9);
-    color: #333;
+    color: var(--text-color);
     backdrop-filter: blur(10px);
 }
 
@@ -321,13 +368,13 @@ body {
 }
 
 .mockup-dots span:first-child {
-    background: #e53e3e;
+    background: var(--primary-color);
 }
 .mockup-dots span:nth-child(2) {
-    background: #ff8c00;
+    background: var(--secondary-color);
 }
 .mockup-dots span:last-child {
-    background: #22c55e;
+    background: var(--accent-color);
 }
 
 .mockup-url {
@@ -351,7 +398,7 @@ body {
 
 .mockup-logo {
     font-weight: 700;
-    color: #e53e3e;
+    color: var(--primary-color);
 }
 
 .mockup-menu {
@@ -377,7 +424,7 @@ body {
 
 .mockup-title {
     height: 15px;
-    background: #e53e3e;
+    background: var(--primary-color);
     border-radius: 3px;
     margin-bottom: 0.5rem;
 }
@@ -392,7 +439,7 @@ body {
 
 .mockup-button {
     height: 25px;
-    background: #ff8c00;
+    background: var(--secondary-color);
     border-radius: 15px;
     width: 60%;
 }
@@ -400,7 +447,7 @@ body {
 .mockup-image {
     width: 60px;
     height: 60px;
-    background: linear-gradient(45deg, #e53e3e, #ff8c00);
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     border-radius: 8px;
 }
 
@@ -477,7 +524,7 @@ body {
 }
 
 .comparison-header-row {
-    background: linear-gradient(135deg, #e53e3e 0%, #ff8c00 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
 }
 
@@ -565,7 +612,7 @@ body {
 .benefit-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #e53e3e 0%, #ff8c00 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -699,7 +746,7 @@ body {
 
 .offer-item i {
     font-size: 3rem;
-    color: #ff8c00;
+    color: var(--secondary-color);
     margin-bottom: 1rem;
 }
 
@@ -709,7 +756,7 @@ body {
 }
 
 .offer-item p {
-    color: #ff8c00;
+    color: var(--secondary-color);
     font-weight: 600;
     font-size: 1.1rem;
 }
@@ -718,7 +765,7 @@ body {
     background: rgba(251, 191, 36, 0.2);
     padding: 1.5rem;
     border-radius: 15px;
-    border: 2px solid #ff8c00;
+    border: 2px solid var(--secondary-color);
 }
 
 .offer-total p {
@@ -727,7 +774,7 @@ body {
 }
 
 .offer-total span {
-    color: #ff8c00;
+    color: var(--secondary-color);
     font-size: 2rem;
     font-weight: 800;
 }
@@ -771,7 +818,7 @@ body {
 }
 
 .form-benefit i {
-    color: #22c55e;
+    color: var(--accent-color);
     font-size: 1.2rem;
 }
 
@@ -819,7 +866,7 @@ body {
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
-    border-color: #e53e3e;
+    border-color: var(--primary-color);
 }
 
 .form-note {
@@ -848,13 +895,15 @@ body {
     align-items: center;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #ff8c00;
+    color: var(--secondary-color);
     margin-bottom: 1rem;
 }
 
-.footer-brand i {
+.footer-brand img {
     margin-right: 0.5rem;
     font-size: 1.8rem;
+    width: 80px;
+    height: auto;
 }
 
 .footer-left p {
@@ -870,7 +919,7 @@ body {
 }
 
 .footer-contact i {
-    color: #ff8c00;
+    color: var(--secondary-color);
 }
 
 .footer-bottom {
@@ -918,7 +967,7 @@ body {
 .modal-header {
     text-align: center;
     padding: 2rem 2rem 1rem;
-    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    background: linear-gradient(135deg, var(--accent-color) 0%, #16a34a 100%);
     color: white;
     border-radius: 20px 20px 0 0;
 }
@@ -1065,7 +1114,7 @@ body {
     height: 20px;
     border: 3px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    border-top-color: #fff;
+    border-top-color: var(--background-color);
     animation: spin 1s ease-in-out infinite;
 }
 
@@ -1101,7 +1150,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #e53e3e 0%, #ff8c00 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     border-radius: 4px;
 }
 
