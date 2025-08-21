@@ -104,7 +104,8 @@ body {
     align-items: center;
     /* Updated gradient to use logo colors: red to orange */
     /* background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); */
-    background-color: var(--background-color);
+    /* background-color: var(--background-color); */
+    background: url('/images/ch3.png') no-repeat center center/cover;
     overflow: hidden;
 }
 
@@ -114,11 +115,12 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    /* background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); */
     overflow: hidden;
+    background-color: rgba(46, 46, 46, 0.774);
 }
 
-.particles-wrapper {
+/* .particles-wrapper {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -140,7 +142,7 @@ body {
         radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
     animation: float 15s ease-in-out infinite;
-}
+} */
 
 @keyframes rotate {
     0% { transform: translate(-50%, -50%) rotate(0deg); }
@@ -193,12 +195,13 @@ body {
     line-height: 1.2;
     /* Reduced margin for more compact spacing */
     margin-bottom: 1.5rem;
+    color: white;
 }
 
 .highlight {
     /* Updated highlight color to logo blue */
-    color: #0ea5e9;
-    text-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+    color: #e93a0e;
+    text-shadow: 0 0 20px rgba(233, 120, 14, 0.5);
 }
 
 .highlight-orange {
@@ -222,7 +225,7 @@ body {
     font-size: 1.3rem;
     margin-bottom: 1rem;
     /* Updated color to logo blue */
-    color: #0ea5e9;
+    color: var(--secondary-color);
 }
 
 .pain-list {
@@ -234,7 +237,7 @@ body {
     align-items: center;
     margin-bottom: 0.8rem;
     font-size: 1.1rem;
-    color: var(--text-color);
+    color: var(--background-color);
 }
 
 .pain-list i {
@@ -246,7 +249,7 @@ body {
 
 .hero-subtitle {
     font-size: 1.2rem;
-    color: var(--text-color);
+    color: var(--background-color);
     /* Reduced margin for more compact spacing */
     margin-bottom: 1.5rem;
     opacity: 0.9;
@@ -260,7 +263,7 @@ body {
     margin-top: 0.5rem;
     font-size: 0.9rem;
     opacity: 0.8;
-    color: var(--text-color);
+    color: var(--background-color);
 }
 
 /* Buttons */
@@ -996,6 +999,16 @@ body {
 .modal-footer {
     padding: 0 2rem 2rem;
     text-align: center;
+}
+@media (max-width: 1500px) {
+    .hero-content{
+        padding-top: 100px;
+    }
+
+    .nav-brand img{
+        width: 50px;
+    }
+    
 }
 
 /* Responsive Design */
