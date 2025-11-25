@@ -3,530 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bán hàng trên Shopee đã tốt - nhưng Shopee không phải là tất cả!</title>
-    <meta name="description" content="Tạo website riêng để bán hàng song song với Shopee. Tăng lợi nhuận, xây dựng thương hiệu và không còn phụ thuộc vào sàn thương mại điện tử.">
-
+    <title>Lê Trương Trọng Tấn | Web Developer</title>
     
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="images/h_logo.png"> 
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
     
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
+    <!-- Icon Libraries (FontAwesome & Devicon) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css?v=1">
+    <!-- Animation Library (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Liên kết đến file CSS riêng -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav container">
-            <div class="nav-brand">
-                <img src="/images/h_logo.png" alt="logo">
-                <span>Mạng Xuyên Việt</span>
-            </div>
-            <div class="nav-menu">
-                <a href="#benefits" class="nav-link">Lợi ích</a>
-                <a href="#comparison" class="nav-link">So sánh</a>
-                <a href="#templates" class="nav-link">Mẫu website</a>
-                <a href="#contact" class="nav-link">Liên hệ</a>
-            </div>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
+    <canvas id="canvas-bg"></canvas>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="container">
+            <div class="logo">TRONG TAN<span style="color: #e0e0e0;">.DEV</span></div>
+            <div class="nav-links">
+                <a href="#about">Giới Thiệu</a>
+                <a href="#services">Dịch Vụ</a>
+                <a href="#projects">Dự Án</a>
+                <a href="#contact">Liên Hệ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
     <section class="hero">
-        <div class="hero-bg" style="">
-            <div class="particles-wrapper">
-                <div class="hero-particles"></div>
+        <div class="hero-content" data-aos="zoom-in" data-aos-duration="1500">
+            <h1 class="glitch">LÊ TRƯƠNG<br><span>TRỌNG TẤN</span></h1>
+            <p>FREELANCER WEB DEVELOPER | .NET | REACT | NEXTJS</p>
+            <div style="margin-top: 30px;">
+                <a href="#contact" class="btn">Liên hệ ngay</a>
+                <a href="#projects" class="btn" style="border-color: var(--secondary); color: var(--secondary); margin-left: 15px;">Xem Portfolio</a>
             </div>
         </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-top">
-                    <h1 class="hero-title">
-                        Bán hàng trên <span class="highlight">Shopee</span> đã tốt – </br>nhưng <span class="highlight-orange">Shopee không phải là tất cả!</span>
-                    </h1>
+            <h2 class="section-title" data-aos="fade-up">Về Tôi</h2>
+            <div class="about-grid">
+                <div class="about-text" data-aos="fade-right">
+                    <p style="margin-bottom: 20px;">
+                        Chào bạn, tôi là <strong>Trọng Tấn</strong>. Một lập trình viên Web Full-stack với niềm đam mê công nghệ và giải quyết vấn đề. 
+                        Tôi chuyên xây dựng các ứng dụng web chất lượng cao, tối ưu hiệu suất và thân thiện với người dùng.
+                    </p>
+                    <p style="margin-bottom: 20px;">
+                        Với nền tảng vững chắc về <strong>.NET, SQL Server</strong> và các framework hiện đại như <strong>NextJS, ReactJS</strong>, tôi cam kết mang lại những sản phẩm tốt nhất cho doanh nghiệp của bạn.
+                    </p>
+                    <ul style="list-style: none; margin-top: 20px;">
+                        <li><i class="fas fa-map-marker-alt" style="color:var(--primary); width: 25px;"></i> Tân Phú, TP.HCM</li>
+                        <li><i class="fas fa-graduation-cap" style="color:var(--primary); width: 25px;"></i> CNTT - HUIT (2025)</li>
+                        <li><i class="fas fa-language" style="color:var(--primary); width: 25px;"></i> TOEIC 445</li>
+                    </ul>
                 </div>
-                <div class="hero-bottom">
-                    <div class="hero-left" data-aos="fade-right">
-                        <div class="pain-points">
-                            <h3>Bạn có đang mệt mỏi vì:</h3>
-                            <ul class="pain-list">
-                                <li><i class="fas fa-times-circle"></i> Phí sàn & hoa hồng ngày càng cao</li>
-                                <li><i class="fas fa-times-circle"></i> Cạnh tranh giá mệt mỏi, lợi nhuận teo tóp</li>
-                                <li><i class="fas fa-times-circle"></i> Traffic hôm nay nhiều, mai mất hút</li>
-                                <li><i class="fas fa-times-circle"></i> Khách hàng chỉ nhớ "Shopee", không nhớ tên shop của bạn</li>
-                            </ul>
-                        </div>
-                        <p class="hero-subtitle">
-                            Nếu bạn gật đầu với 2–3 điều trên, bạn đang đặt tương lai kinh doanh của mình… 
-                            <strong>vào tay người khác.</strong>
-                        </p>
-                        <div class="hero-cta">
-                            <button class="btn btn-primary btn-large" onclick="scrollToForm()">
-                                <i class="fas fa-rocket"></i>
-                                Nhận tư vấn miễn phí
-                            </button>
-                            <p class="cta-note">Không rủi ro, không phí ẩn</p>
-                        </div>
+                <div class="about-exp" data-aos="fade-left">
+                    <div class="exp-card">
+                        <h4 style="color: var(--primary);">04/2025 - 09/2025 | Mạng Xuyên Việt</h4>
+                        <h3>Developer (Fresher)</h3>
+                        <p style="font-size: 0.9rem; color: #aaa;">Phát triển Website, Landing Page, tối ưu hóa hệ thống cho khách hàng.</p>
                     </div>
-                    <div class="hero-right" data-aos="fade-left">
-                        <div class="hero-mockup">
-                            <div class="mockup-container">
-                                <div class="mockup-screen">
-                                    <div class="mockup-header">
-                                        <div class="mockup-dots">
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                        </div>
-                                        <div class="mockup-url">yourshop.com</div>
-                                    </div>
-                                    <div class="mockup-content">
-                                        <div class="mockup-nav">
-                                            <div class="mockup-logo">Your Brand</div>
-                                            <div class="mockup-menu">
-                                                <span></span>
-                                                <span></span>
-                                                <span></span>
-                                            </div>
-                                        </div>
-                                        <div class="mockup-hero">
-                                            <div class="mockup-text">
-                                                <div class="mockup-title"></div>
-                                                <div class="mockup-subtitle"></div>
-                                                <div class="mockup-button"></div>
-                                            </div>
-                                            <div class="mockup-image"></div>
-                                        </div>
-                                        <div class="mockup-products">
-                                            <div class="mockup-product"></div>
-                                            <div class="mockup-product"></div>
-                                            <div class="mockup-product"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="exp-card">
+                        <h4 style="color: var(--primary);">09/2024 - 12/2024 | Long Phát CRM</h4>
+                        <h3>Developer (Intern)</h3>
+                        <p style="font-size: 0.9rem; color: #aaa;">Web Dev (PHP/JS), SuiteCRM, quản lý database.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Solution Section -->
-    <section class="solution" id="benefits">
+    <!-- SKILLS SECTION -->
+    <section class="skills">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Giải pháp đơn giản: Song song Shopee<br> sở hữu ngay Website riêng</h2>
-                <p>Shopee tốt để bắt đầu, nhưng để kinh doanh bền vững, bạn cần một "ngôi nhà" riêng – nơi bạn toàn quyền kiểm soát giá bán, khách hàng, thương hiệu và chiến lược kinh doanh.</p>
+            <h2 class="section-title" data-aos="fade-up">Công Nghệ & Kỹ Năng</h2>
+            <div class="skills-grid" data-aos="zoom-in-up">
+                <div class="skill-item"><i class="devicon-csharp-plain"></i><span>C#</span></div>
+                <div class="skill-item"><i class="devicon-dot-net-plain-wordmark"></i><span>.NET MVC</span></div>
+                <div class="skill-item"><i class="devicon-nextjs-original"></i><span>NextJS</span></div>
+                <div class="skill-item"><i class="devicon-react-original"></i><span>ReactJS</span></div>
+                <div class="skill-item"><i class="devicon-typescript-plain"></i><span>TypeScript</span></div>
+                <div class="skill-item"><i class="devicon-javascript-plain"></i><span>JavaScript</span></div>
+                <div class="skill-item"><i class="devicon-microsoftsqlserver-plain"></i><span>SQL Server</span></div>
+                <div class="skill-item"><i class="devicon-postgresql-plain"></i><span>PostgreSQL</span></div>
+                <div class="skill-item"><i class="devicon-mongodb-plain"></i><span>MongoDB</span></div>
+                <div class="skill-item"><i class="devicon-firebase-plain"></i><span>Firebase</span></div>
+                <div class="skill-item"><i class="devicon-photoshop-plain"></i><span>Photoshop</span></div>
+                <div class="skill-item"><i class="fas fa-server"></i><span>Vercel/Netlify</span></div>
             </div>
         </div>
     </section>
 
-    <!-- Comparison Section -->
-    <section class="comparison" id="comparison">
+    <!-- SERVICES & PRICING -->
+    <section id="services" class="services">
         <div class="container">
-            <div class="comparison-header" data-aos="fade-up">
-                <h2>So sánh: Shopee vs Website riêng</h2>
-                <p>Hãy xem sự khác biệt rõ ràng giữa việc chỉ bán trên Shopee và có thêm website riêng</p>
+            <h2 class="section-title" data-aos="fade-up">Gói Dịch Vụ Website</h2>
+            <p style="text-align: center; color: #888; margin-bottom: 40px;">Giải pháp toàn diện cho cá nhân và doanh nghiệp</p>
+            
+            <div class="pricing-grid">
+                <!-- Basic -->
+                <div class="pricing-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="price-title">GÓI CƠ BẢN</div>
+                    <div class="price-tag">6.000.000 ₫</div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i> Website 4 trang (Home, About...)</li>
+                        <li><i class="fas fa-check"></i> Thiết kế Responsive</li>
+                        <li><i class="fas fa-check"></i> Tối ưu SEO cơ bản</li>
+                        <li><i class="fas fa-check"></i> Tích hợp Chat/Zalo/Map</li>
+                        <li><i class="fas fa-check"></i> Bảo hành 1 tháng</li>
+                    </ul>
+                    <a href="#contact" class="btn">Chọn gói này</a>
+                </div>
+
+                <!-- Starter+ -->
+                <div class="pricing-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="price-title">STARTER+</div>
+                    <div class="price-tag">8.500.000 ₫</div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i> Bao gồm Gói Cơ Bản</li>
+                        <li><i class="fas fa-star" style="color: gold;"></i> Hosting 1 năm</li>
+                        <li><i class="fas fa-check"></i> Animation giao diện</li>
+                        <li><i class="fas fa-check"></i> Hỗ trợ nội dung 2 tháng</li>
+                    </ul>
+                    <a href="#contact" class="btn">Chọn gói này</a>
+                </div>
+
+                <!-- Pro -->
+                <div class="pricing-card" data-aos="flip-left" data-aos-delay="300" style="border-color: var(--secondary);">
+                    <div class="price-title" style="color: var(--secondary);">GÓI PRO</div>
+                    <div class="price-tag">12.000.000 ₫</div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i> Hosting 1 năm</li>
+                        <li><i class="fas fa-check"></i> Trang Tin tức / Blog</li>
+                        <li><i class="fas fa-database"></i> Trang Quản trị (Admin)</li>
+                        <li><i class="fas fa-chart-line"></i> Google Analytics + GSC</li>
+                        <li><i class="fas fa-check"></i> Hỗ trợ nội dung 2 tháng</li>
+                    </ul>
+                    <a href="#contact" class="btn" style="border-color: var(--secondary); color:var(--secondary);">Đề xuất</a>
+                </div>
+
+                <!-- Premium -->
+                <div class="pricing-card premium" data-aos="flip-left" data-aos-delay="400">
+                    <div class="badge">BEST</div>
+                    <div class="price-title" style="color: var(--accent);">PREMIUM</div>
+                    <div class="price-tag">16.000.000 ₫</div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i> Hosting 1 năm</li>
+                        <li><i class="fas fa-crown" style="color: gold;"></i> Full tính năng Admin & Blog</li>
+                        <li><i class="fas fa-magic"></i> Thiết kế theo Brand Guideline</li>
+                        <li><i class="fas fa-search"></i> SEO Nâng cao + 5 bài viết</li>
+                        <li><i class="fas fa-clock"></i> Hỗ trợ 3 tháng</li>
+                    </ul>
+                    <a href="#contact" class="btn" style="border-color: var(--accent); color: var(--accent);">VIP Contact</a>
+                </div>
             </div>
-            <div class="comparison-table" data-aos="fade-up" data-aos-delay="200">
-                <div class="comparison-row comparison-header-row">
-                    <div class="comparison-cell"></div>
-                    <div class="comparison-cell shopee-col">
-                        <i class="fab fa-shopify"></i>
-                        Shopee (duy nhất)
-                    </div>
-                    <div class="comparison-cell website-col">
-                        <i class="fas fa-globe"></i>
-                        Shopee + Website riêng
-                    </div>
-                </div>
-                <div class="comparison-row">
-                    <div class="comparison-cell feature-cell">Chi phí vận hành</div>
-                    <div class="comparison-cell shopee-cell">
-                        <i class="fas fa-times"></i>
-                        Mất phí sàn cao
-                    </div>
-                    <div class="comparison-cell website-cell">
-                        <i class="fas fa-check"></i>
-                        Không phí sàn, lợi nhuận về 100%
-                    </div>
-                </div>
-                <div class="comparison-row">
-                    <div class="comparison-cell feature-cell">Kiểm soát traffic</div>
-                    <div class="comparison-cell shopee-cell">
-                        <i class="fas fa-times"></i>
-                        Bị lệ thuộc traffic
-                    </div>
-                    <div class="comparison-cell website-cell">
-                        <i class="fas fa-check"></i>
-                        Chủ động chạy quảng cáo & SEO
+            
+             <div style="margin-top: 50px; text-align: center; background: var(--glass); padding: 20px; border-radius: 10px;" data-aos="fade-up">
+                <h3 style="color: var(--primary);">Các dịch vụ lẻ khác</h3>
+                <p style="margin: 10px 0;">Landing Page: 1.5M - 2.5M | CMS Code thuần: 5M - 7M | Mini E-Commerce: 6M - 10M</p>
+                <p style="font-size: 0.8rem; font-style: italic;">(Bảo trì/Update: 300k - 1.2M/tháng)</p>
+             </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Dự Án Tiêu Biểu</h2>
+            
+            <h3 style="margin-bottom: 20px; border-left: 3px solid var(--primary); padding-left: 10px;">Doanh Nghiệp / Landing Page</h3>
+            <div class="project-grid" style="margin-bottom: 40px;">
+                
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-info">
+                        <h4 class="project-title">MCTalent</h4>
+                        <div class="tech-tags">
+                            <span>ASP.NET</span><span>SQL</span><span>Frontend</span>
+                        </div>
+                        <p class="project-desc">Website giới thiệu công ty, quản lý talent.</p>
+                        <a href="https://mctalent.vn/" target="_blank" class="btn" style="padding: 5px 15px; font-size: 0.8rem;">Live Demo</a>
                     </div>
                 </div>
-                <div class="comparison-row">
-                    <div class="comparison-cell feature-cell">Giữ chân khách hàng</div>
-                    <div class="comparison-cell shopee-cell">
-                        <i class="fas fa-times"></i>
-                        Không giữ được khách
-                    </div>
-                    <div class="comparison-cell website-cell">
-                        <i class="fas fa-check"></i>
-                        Lưu & chăm sóc khách hàng
-                    </div>
-                </div>
-                <div class="comparison-row">
-                    <div class="comparison-cell feature-cell">Xây dựng thương hiệu</div>
-                    <div class="comparison-cell shopee-cell">
-                        <i class="fas fa-times"></i>
-                        Khó xây thương hiệu
-                    </div>
-                    <div class="comparison-cell website-cell">
-                        <i class="fas fa-check"></i>
-                        Thương hiệu nổi bật, riêng biệt
+
+                 <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-info">
+                        <h4 class="project-title">Just In Time</h4>
+                        <div class="tech-tags">
+                            <span>C#</span><span>Corporate</span>
+                        </div>
+                        <p class="project-desc">Giải pháp quản lý và giới thiệu doanh nghiệp.</p>
+                        <a href="https://justintimevn.com/" target="_blank" class="btn" style="padding: 5px 15px; font-size: 0.8rem;">Live Demo</a>
                     </div>
                 </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-info">
+                        <h4 class="project-title">Hocons</h4>
+                        <div class="tech-tags">
+                            <span>WebForm</span><span>CSS</span>
+                        </div>
+                        <p class="project-desc">Website xây dựng, dự án.</p>
+                        <a href="https://hocons.com.vn/" target="_blank" class="btn" style="padding: 5px 15px; font-size: 0.8rem;">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 20px; border-left: 3px solid var(--accent); padding-left: 10px;">E-Commerce / Others</h3>
+            <div class="project-grid">
+                 <div class="project-card" data-aos="fade-up">
+                    <div class="project-info">
+                        <h4 class="project-title">Minh Phat Audio</h4>
+                        <div class="tech-tags">
+                            <span>Shop Mini</span><span>SEO</span>
+                        </div>
+                        <p class="project-desc">Cửa hàng thiết bị âm thanh trực tuyến.</p>
+                        <a href="https://minhphataudio.com/" target="_blank" class="btn" style="padding: 5px 15px; font-size: 0.8rem;">Live Demo</a>
+                    </div>
+                </div>
+                
+                 <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-info">
+                        <h4 class="project-title">Management App</h4>
+                        <div class="tech-tags">
+                            <span>NextJS</span><span>Postgres</span><span>Vercel</span>
+                        </div>
+                        <p class="project-desc">Quản lý đề tài thực nghiệm trung tâm (Login: tanbgd@gmail.com).</p>
+                        <a href="https://dacn-phong-thi-nghiem.vercel.app" target="_blank" class="btn" style="padding: 5px 15px; font-size: 0.8rem;">App Demo</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Liên Hệ</h2>
+            
+            <div class="contact-box" data-aos="zoom-in">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i> 0916 467 039
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i> tannguyen0916@gmail.com
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i> Tân Phú, TP.HCM
+                </div>
+                
+                <div class="social-links" style="margin-top: 30px;">
+                    <a href="https://github.com/tandzp0o" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fas fa-comment-dots"></i></a>
+                </div>
+
+                <p style="margin-top: 20px; font-size: 0.9rem; color: #888;">
+                    * Bên B hoạt động độc lập, không phát hành hóa đơn VAT.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="benefits">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Website sẽ mang lại cho bạn điều gì?</h2>
-                <p>Những lợi ích thiết thực mà website riêng mang lại cho doanh nghiệp của bạn</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="benefit-icon">
-                        <i class="fas fa-coins"></i>
-                    </div>
-                    <h3>Tiết kiệm phí sàn, tăng lợi nhuận</h3>
-                    <p>Không còn bị ăn mòn doanh thu mỗi đơn. 100% lợi nhuận về túi bạn.</p>
-                </div>
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="benefit-icon">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h3>Xây thương hiệu lâu dài</h3>
-                    <p>Tên miền, giao diện, màu sắc là của bạn. Khách hàng nhớ đến thương hiệu của bạn.</p>
-                </div>
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="benefit-icon">
-                        <i class="fas fa-share-alt"></i>
-                    </div>
-                    <h3>Bán hàng đa kênh</h3>
-                    <p>Kết hợp Google, Facebook, TikTok để hút khách mới từ nhiều nguồn khác nhau.</p>
-                </div>
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="benefit-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Giữ chân khách hàng cũ</h3>
-                    <p>Dễ dàng remarketing qua email, SMS, chat. Tăng tỷ lệ mua lại.</p>
-                </div>
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="benefit-icon">
-                        <i class="fas fa-expand-arrows-alt"></i>
-                    </div>
-                    <h3>Không giới hạn mở rộng</h3>
-                    <p>Thêm sản phẩm, chương trình, chiến dịch bất cứ lúc nào bạn muốn.</p>
-                </div>
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="benefit-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Phân tích dữ liệu chi tiết</h3>
-                    <p>Theo dõi hành vi khách hàng, tối ưu hóa chiến lược bán hàng hiệu quả.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Templates Section -->
-    <section class="templates" id="templates">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Mẫu Website Bán Lẻ Chuyên Nghiệp</h2>
-                <p>Những mẫu website đẹp mắt, chuyên nghiệp dành riêng cho shop bán lẻ</p>
-            </div>
-            <div class="templates-grid">
-                <div class="template-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="template-image">
-                        <img src="/images/w1.png?height=300&width=400" alt="Mẫu website thời trang">
-                        <div class="template-overlay">
-                            <a class="btn btn-secondary" href="https://giacatuniform.com/">Xem demo</a>
-                        </div>
-                    </div>
-                    <div class="template-info">
-                        <h3>Thời trang & Phụ kiện</h3>
-                        <p>Thiết kế hiện đại, tối ưu cho sản phẩm thời trang</p>
-                    </div>
-                </div>
-                <div class="template-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="template-image">
-                        <img src="/images/w2.png?height=300&width=400" alt="Mẫu website điện tử">
-                        <div class="template-overlay">
-                            <a class="btn btn-secondary" href="http://soladevice.eweb.xvnet.vn/">Xem demo</a>
-                        </div>
-                    </div>
-                    <div class="template-info">
-                        <h3>Điện tử & Công nghệ</h3>
-                        <p>Giao diện chuyên nghiệp cho sản phẩm công nghệ</p>
-                    </div>
-                </div>
-                <div class="template-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="template-image">
-                        <img src="/images/w3.png?height=300&width=400" alt="Mẫu website mỹ phẩm">
-                        <div class="template-overlay">
-                            <a class="btn btn-secondary" href="http://npkorea.eweb.xvnet.vn/">Xem demo</a>
-                        </div>
-                    </div>
-                    <div class="template-info">
-                        <h3>Mỹ phẩm & Làm đẹp</h3>
-                        <p>Thiết kế tinh tế, phù hợp với sản phẩm làm đẹp</p>
-                    </div>
-                </div>
-                <div class="template-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="template-image">
-                        <img src="/images/w4.png?height=300&width=400" alt="Mẫu website nội thất">
-                        <div class="template-overlay">
-                            <a class="btn btn-secondary" href="http://remviet.xvnet.vn/">Xem demo</a>
-                        </div>
-                    </div>
-                    <div class="template-info">
-                        <h3>Nội thất & Trang trí</h3>
-                        <p>Giao diện sang trọng cho sản phẩm nội thất</p>
-                    </div>
-                </div>
-                <div class="template-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="template-image">
-                        <img src="/images/w5.png?height=300&width=400" alt="Mẫu website nội thất">
-                        <div class="template-overlay">
-                            <a class="btn btn-secondary" href="https://samnhanphuong.com/">Xem demo</a>
-                        </div>
-                    </div>
-                    <div class="template-info">
-                        <h3>Thực phẩm & Sức khỏe</h3>
-                        <p>Giao diện hiện đại, tối ưu cho sản phẩm thực phẩm</p>
-                    </div>
-                </div>
-                <div class="template-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="template-image">
-                        <img src="/images/w6.png?height=300&width=400" alt="Mẫu website nội thất">
-                        <div class="template-overlay">
-                            <a class="btn btn-secondary" href="https://nowcoffeeandtea.vn/">Xem demo</a>
-                        </div>
-                    </div>
-                    <div class="template-info">
-                        <h3>Đồ uống</h3>
-                        <p>Giao diện hiện đại, tối ưu cho sản phẩm đồ uống</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Offer Section -->
-    <section class="offer">
-        <div class="parallax-bg" style="background-image: url('/images/ch2.png')"></div>
-        <div class="container">
-            <div class="offer-content" data-aos="fade-up">
-                <h2>Ưu đãi đặc biệt cho 100 khách hàng đầu tiên</h2>
-                <div class="offer-grid">
-                    <div class="offer-item">
-                        <i class="fas fa-globe"></i>
-                        <h3>Miễn phí tên miền 1 năm</h3>
-                        <p>Trị giá 500.000đ</p>
-                    </div>
-                    <div class="offer-item">
-                        <i class="fas fa-server"></i>
-                        <h3>Hosting tốc độ cao 6 tháng</h3>
-                        <p>Trị giá 1.200.000đ</p>
-                    </div>
-                    <div class="offer-item">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3>Khóa học chạy quảng cáo Facebook</h3>
-                        <p>Trị giá 2.000.000đ</p>
-                    </div>
-                </div>
-                <div class="offer-total">
-                    <p>Tổng giá trị ưu đãi: <span>3.700.000đ</span></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section class="contact-form" id="contact">
-        <div class="container">
-            <div class="form-content">
-                <div class="form-left" data-aos="fade-right">
-                    <h2>Shopee là "ngôi nhà thuê" – Website là "ngôi nhà của chính bạn"</h2>
-                    <p class="form-subtitle">Đầu tư một lần, lợi ích lâu dài.</p>
-                    <div class="form-benefits">
-                        <div class="form-benefit">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Tư vấn miễn phí</span>
-                        </div>
-                        <div class="form-benefit">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Hỗ trợ trọn gói từ A–Z</span>
-                        </div>
-                        <div class="form-benefit">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Giao diện chuẩn mobile – bán hàng dễ dàng</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-right" data-aos="fade-left">
-                    <div class="contact-form-container">
-                        <h3>Đăng ký tư vấn & nhận ưu đãi ngay</h3>
-                        <form id="contactForm" class="contact-form-inner">
-                            <div class="form-group">
-                                <label for="fullName">Họ và tên *</label>
-                                <input type="text" id="fullName" name="fullName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Số điện thoại *</label>
-                                <input type="tel" id="phone" name="phone" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="product">Sản phẩm đang bán trên sàn *</label>
-                                <select id="product" name="product" required>
-                                    <option value="">Chọn danh mục sản phẩm</option>
-                                    <option value="fashion">Thời trang & Phụ kiện</option>
-                                    <option value="electronics">Điện tử & Công nghệ</option>
-                                    <option value="cosmetics">Mỹ phẩm & Làm đẹp</option>
-                                    <option value="home">Nội thất & Trang trí</option>
-                                    <option value="food">Thực phẩm & Đồ uống</option>
-                                    <option value="sports">Thể thao & Du lịch</option>
-                                    <option value="books">Sách & Văn phòng phẩm</option>
-                                    <option value="other">Khác</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="shopLink">Link shop trên sàn (không bắt buộc)</label>
-                                <input type="url" id="shopLink" name="shopLink" placeholder="https://shopee.vn/yourshop">
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-large">
-                                <i class="fas fa-paper-plane"></i>
-                                Nhận tư vấn miễn phí ngay
-                            </button>
-                            <p class="form-note">Chúng tôi cam kết bảo mật thông tin của bạn</p>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-left">
-                    <div class="footer-brand">
-                        <img src="/images/h_logo.png" alt="logo">
-                        <span>Mạng Xuyên Việt</span>
-                    </div>
-                    <p>Giải pháp website chuyên nghiệp cho các shop bán lẻ trên Shopee</p>
-                    <img class="footer-bct" src="/images/bct.png" alt="logo">
-                </div>
-                <div class="footer-center">
-                    <div class="f-list">
-                        <div class="f-item">
-                            <p class="f-ttl"><i class="fas fa-map-marker-alt"></i>TRỤ SỞ CHÍNH</p>
-                            <p class="f-txt">
-                                Địa chỉ: 61/31 Bình Giã, Phường Tân Bình, TP.HCM<br>
-                                Liên hệ: <a href="tel:&lrm;0909995137">0909 995 137</a> | <a href="mailto:info@xvnet.vn">info@xvnet.vn</a>
-                            </p>
-                        </div>
-                        <div class="f-item">
-                            <p class="f-ttl"><i class="fas fa-map-marker-alt"></i>VPĐD Hà Nội</p>
-                            <p class="f-txt">
-                                Địa chỉ: 180 Hoàng Ngân, Phường Trung Hòa, Hà Nội<br>
-                                Liên hệ: <a href="tel:&lrm;0909850886">0909 850 886</a> | <a href="mailto:info.hn@xvnet.vn">info.hn@xvnet.vn</a>
-                            </p>
-                        </div>
-                        <div class="f-item">
-                            <p class="f-ttl"><i class="fas fa-map-marker-alt"></i>Chi nhánh HCM</p>
-                            <p class="f-txt">
-                                Địa chỉ: 19 Thanh Tịnh, Phường Rạch Dừa, TP.HCM<br>
-                                Liên hệ: <a href="tel:&lrm;0982919932">098 291 9932</a> | <a href="mailto:romandt@xvnet.vn">romandt@xvnet.vn</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-right">
-                    <p class="footer-title">Thông Tin Cần Biết</p>
-                    <div class="footer-contact">
-                        <a href="https://mangxuyenviet.vn/chinh-sach/chinh-sach-va-quy-dinh-chung">Chính sách & quy định chung</a>
-                        <a href="https://mangxuyenviet.vn/chinh-sach/quy-dinh-hinh-thuc-thanh-toan">Quy định & hình thức thanh toán</a>
-                        <a href="https://mangxuyenviet.vn/chinh-sach/chinh-sach-giao-nhan-cai-dat">Giao nhận & cài đặt</a>
-                        <a href="https://mangxuyenviet.vn/chinh-sach/bao-tri-bao-hanh">Bảo trì, bảo hành</a>
-                        <a href="https://mangxuyenviet.vn/chinh-sach/tra-huy-dich-vu-hoan-tien">Trả/hủy dịch vụ & hoàn tiền</a>
-                        <a href="https://mangxuyenviet.vn/chinh-sach/chinh-sach-bao-mat">Chính sách bảo mật</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 <a href="https://mangxuyenviet.vn/">Mạng Xuyên Việt</a>. Tất cả quyền được bảo lưu.</p>
-                <p>Sử dụng nội dung ở trang này và dịch vụ tại Mạng Xuyên Việt có nghĩa là bạn đồng ý với <a href="https://mangxuyenviet.vn/pages/chinh-sach-bao-mat">Chính sách bảo mật</a> của chúng tôi.
-                    Công ty TNHH Công Nghệ Mạng Xuyên Việt - Giấy phép kinh doanh số: 0311020760 cấp ngày 27/07/2011 bởi Sở Kế Hoạch và Đầu Tư Tp. Hồ Chí Minh</p>
-            </div>
-        </div>
+    <footer>
+        <p>© 2025 Lê Trương Trọng Tấn | Freelancer Web Developer</p>
+        <p style="font-size: 0.8rem; opacity: 0.5;">Designed with <i class="fas fa-heart" style="color: var(--accent)"></i> and Code</p>
     </footer>
 
-    <!-- Success Modal -->
-    <div id="successModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <i class="fas fa-check-circle"></i>
-                <h3>Đăng ký thành công!</h3>
-            </div>
-            <div class="modal-body">
-                <p>Cảm ơn bạn đã đăng ký. Chúng tôi sẽ liên hệ với bạn trong vòng 24h để tư vấn miễn phí.</p>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" onclick="closeModal()">Đóng</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
+    <!-- Liên kết Library và File JS riêng -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="script.js"></script>
-
-    <script>
-        window.addEventListener("scroll", function () {
-            const bg = document.querySelector(".parallax-bg");
-            const rect = bg.parentElement.getBoundingClientRect();
-            
-            // khi section lọt vào viewport
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                let offset = rect.top * -0.9; // chỉnh tốc độ: -0.2, -0.5...
-                bg.style.transform = `translateY(${offset}px)`;
-            }
-        });
-    </script>
 </body>
 </html>
