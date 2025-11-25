@@ -1,288 +1,709 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lê Trương Trọng Tấn | Web Developer</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
-    
+
+    <!-- Google Fonts (Vietnamese Support) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Icon Libraries (FontAwesome & Devicon) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
+
     <!-- Animation Library (AOS) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <!-- Liên kết đến file CSS riêng -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <canvas id="canvas-bg"></canvas>
 
     <!-- NAVIGATION -->
     <nav>
-        <div class="container">
-            <div class="logo">TRONG TAN<span style="color: #e0e0e0;">.DEV</span></div>
-            <div class="nav-links">
-                <a href="#about">Giới Thiệu</a>
-                <a href="#services">Dịch Vụ</a>
-                <a href="#projects">Dự Án</a>
-                <a href="#contact">Liên Hệ</a>
-            </div>
+      <div class="container">
+        <div class="logo">
+          TRONG TAN<span style="color: #e0e0e0">.DEV</span>
         </div>
+        <div class="nav-links">
+          <a href="#about">Giới Thiệu</a>
+          <a href="#services">Dịch Vụ</a>
+          <a href="#projects">Dự Án</a>
+          <a href="#contact">Liên Hệ</a>
+        </div>
+      </div>
     </nav>
 
     <!-- HERO SECTION -->
     <section class="hero">
-        <div class="hero-content" data-aos="zoom-in" data-aos-duration="1500">
-            <h1 class="glitch">LÊ TRƯƠNG<br><span>TRỌNG TẤN</span></h1>
-            <p>FREELANCER WEB DEVELOPER | .NET | REACT | NEXTJS</p>
-            <div style="margin-top: 30px;">
-                <a href="#contact" class="btn">Liên hệ ngay</a>
-                <a href="#projects" class="btn" style="border-color: var(--secondary); color: var(--secondary); margin-left: 15px;">Xem Portfolio</a>
-            </div>
+      <div class="hero-content" data-aos="zoom-in" data-aos-duration="1500">
+        <h1 class="glitch">LÊ TRƯƠNG<br /><span>TRỌNG TẤN</span></h1>
+        <p>FREELANCER WEB DEVELOPER | .NET | REACT | NEXTJS</p>
+        <div style="margin-top: 30px">
+          <a href="#contact" class="btn">Liên hệ ngay</a>
+          <a
+            href="#projects"
+            class="btn"
+            style="
+              border-color: var(--secondary);
+              color: var(--secondary);
+              margin-left: 15px;
+            "
+            >Xem Portfolio</a
+          >
         </div>
+      </div>
     </section>
 
     <!-- ABOUT SECTION -->
     <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Về Tôi</h2>
-            <div class="about-grid">
-                <div class="about-text" data-aos="fade-right">
-                    <p style="margin-bottom: 20px;">
-                        Chào bạn, tôi là <strong>Trọng Tấn</strong>. Một lập trình viên Web Full-stack với niềm đam mê công nghệ và giải quyết vấn đề. 
-                        Tôi chuyên xây dựng các ứng dụng web chất lượng cao, tối ưu hiệu suất và thân thiện với người dùng.
-                    </p>
-                    <p style="margin-bottom: 20px;">
-                        Với nền tảng vững chắc về <strong>.NET, SQL Server</strong> và các framework hiện đại như <strong>NextJS, ReactJS</strong>, tôi cam kết mang lại những sản phẩm tốt nhất cho doanh nghiệp của bạn.
-                    </p>
-                    <ul style="list-style: none; margin-top: 20px;">
-                        <li><i class="fas fa-map-marker-alt" style="color:var(--primary); width: 25px;"></i> Tân Phú, TP.HCM</li>
-                        <li><i class="fas fa-graduation-cap" style="color:var(--primary); width: 25px;"></i> CNTT - HUIT (2025)</li>
-                        <li><i class="fas fa-language" style="color:var(--primary); width: 25px;"></i> TOEIC 445</li>
-                    </ul>
-                </div>
-                <div class="about-exp" data-aos="fade-left">
-                    <div class="exp-card">
-                        <h4 style="color: var(--primary);">04/2025 - 09/2025 | Mạng Xuyên Việt</h4>
-                        <h3>Developer (Fresher)</h3>
-                        <p style="font-size: 0.9rem; color: #aaa;">Phát triển Website, Landing Page, tối ưu hóa hệ thống cho khách hàng.</p>
-                    </div>
-                    <div class="exp-card">
-                        <h4 style="color: var(--primary);">09/2024 - 12/2024 | Long Phát CRM</h4>
-                        <h3>Developer (Intern)</h3>
-                        <p style="font-size: 0.9rem; color: #aaa;">Web Dev (PHP/JS), SuiteCRM, quản lý database.</p>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Về Tôi</h2>
+        <div class="about-grid">
+          <div class="about-text" data-aos="fade-right">
+            <p style="margin-bottom: 20px">
+              Chào bạn, tôi là <strong>Trọng Tấn</strong>. Một lập trình viên
+              Web Full-stack với niềm đam mê công nghệ và giải quyết vấn đề. Tôi
+              chuyên xây dựng các ứng dụng web chất lượng cao, tối ưu hiệu suất
+              và thân thiện với người dùng.
+            </p>
+            <p style="margin-bottom: 20px">
+              Với nền tảng vững chắc về <strong>.NET, SQL Server</strong> và các
+              framework hiện đại như <strong>NextJS, ReactJS</strong>, tôi cam
+              kết mang lại những sản phẩm tốt nhất cho doanh nghiệp của bạn.
+            </p>
+            <ul style="list-style: none; margin-top: 20px">
+              <li>
+                <i
+                  class="fas fa-map-marker-alt"
+                  style="color: var(--primary); width: 25px"
+                ></i>
+                Tân Phú, TP.HCM
+              </li>
+              <li>
+                <i
+                  class="fas fa-graduation-cap"
+                  style="color: var(--primary); width: 25px"
+                ></i>
+                CNTT - HUIT (2025)
+              </li>
+              <li>
+                <i
+                  class="fas fa-language"
+                  style="color: var(--primary); width: 25px"
+                ></i>
+                TOEIC 445
+              </li>
+            </ul>
+          </div>
+          <div class="about-exp" data-aos="fade-left">
+            <div class="exp-card">
+              <h4 style="color: var(--primary)">
+                04/2025 - 09/2025 | Mạng Xuyên Việt
+              </h4>
+              <h3>Developer (Fresher)</h3>
+              <p style="font-size: 0.9rem; color: #aaa">
+                Phát triển Website, Landing Page, tối ưu hóa hệ thống cho khách
+                hàng.
+              </p>
             </div>
+            <div class="exp-card">
+              <h4 style="color: var(--primary)">
+                09/2024 - 12/2024 | Long Phát CRM
+              </h4>
+              <h3>Developer (Intern)</h3>
+              <p style="font-size: 0.9rem; color: #aaa">
+                Web Dev (PHP/JS), SuiteCRM, quản lý database.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- SKILLS SECTION -->
     <section class="skills">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Công Nghệ & Kỹ Năng</h2>
-            <div class="skills-grid" data-aos="zoom-in-up">
-                <div class="skill-item"><i class="devicon-csharp-plain"></i><span>C#</span></div>
-                <div class="skill-item"><i class="devicon-dot-net-plain-wordmark"></i><span>.NET MVC</span></div>
-                <div class="skill-item"><i class="devicon-nextjs-original"></i><span>NextJS</span></div>
-                <div class="skill-item"><i class="devicon-react-original"></i><span>ReactJS</span></div>
-                <div class="skill-item"><i class="devicon-typescript-plain"></i><span>TypeScript</span></div>
-                <div class="skill-item"><i class="devicon-javascript-plain"></i><span>JavaScript</span></div>
-                <div class="skill-item"><i class="devicon-microsoftsqlserver-plain"></i><span>SQL Server</span></div>
-                <div class="skill-item"><i class="devicon-postgresql-plain"></i><span>PostgreSQL</span></div>
-                <div class="skill-item"><i class="devicon-mongodb-plain"></i><span>MongoDB</span></div>
-                <div class="skill-item"><i class="devicon-firebase-plain"></i><span>Firebase</span></div>
-                <div class="skill-item"><i class="devicon-photoshop-plain"></i><span>Photoshop</span></div>
-                <div class="skill-item"><i class="fas fa-server"></i><span>Vercel/Netlify</span></div>
-            </div>
-        </div>
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Công Nghệ & Kỹ Năng</h2>
+        <div class="skills-grid" data-aos="zoom-in-up">
+          <div class="skill-item">
+            <i class="devicon-csharp-plain colored"></i><span>C#</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-dot-net-plain-wordmark colored"></i
+            ><span>.NET MVC</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-nextjs-original colored"></i><span>NextJS</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-react-original colored"></i><span>ReactJS</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-typescript-plain colored"></i
+            ><span>TypeScript</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-javascript-plain colored"></i
+            ><span>JavaScript</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-microsoftsqlserver-plain colored"></i
+            ><span>SQL Server</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-postgresql-plain colored"></i
+            ><span>PostgreSQL</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-mongodb-plain colored"></i><span>MongoDB</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-firebase-plain colored"></i><span>Firebase</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-photoshop-plain colored"></i
+            ><span>Photoshop</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-server"></i><span>Vercel/Netlify</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-html5-plain colored"></i><span>HTML5</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-css3-plain colored"></i><span>CSS3</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-docker-plain colored"></i><span>Docker</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-cog" style="color: #ff6b35"></i><span>n8n</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-database" style="color: #3ecf8e"></i><span>Supabase</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-bolt" style="color: #ff6b35"></i><span>Upstash Redis</span>
+          </div>
+          <!-- <div class="skill-item">
+            <i class="fas fa-snowflake" style="color: #00d4ff"></i><span>Neon Postgres</span>
+          </div> -->
+          <!-- <div class="skill-item">
+            <i class="fas fa-cloud" style="color: #3448c5"></i><span>Cloudinary</span>
+          </div> -->
+       </div>
     </section>
 
     <!-- SERVICES & PRICING -->
     <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Gói Dịch Vụ Website</h2>
-            <p style="text-align: center; color: #888; margin-bottom: 40px;">Giải pháp toàn diện cho cá nhân và doanh nghiệp</p>
-            
-            <div class="pricing-grid">
-                <!-- Basic -->
-                <div class="pricing-card" data-aos="flip-left" data-aos-delay="100">
-                    <div class="price-title">GÓI CƠ BẢN</div>
-                    <div class="price-tag">6.000.000 ₫</div>
-                    <ul class="price-features">
-                        <li><i class="fas fa-check"></i> Website 4 trang (Home, About...)</li>
-                        <li><i class="fas fa-check"></i> Thiết kế Responsive</li>
-                        <li><i class="fas fa-check"></i> Tối ưu SEO cơ bản</li>
-                        <li><i class="fas fa-check"></i> Tích hợp Chat/Zalo/Map</li>
-                        <li><i class="fas fa-check"></i> Bảo hành 1 tháng</li>
-                    </ul>
-                    <a href="#contact" class="btn">Chọn gói này</a>
-                </div>
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Gói Dịch Vụ Website</h2>
+        <p style="text-align: center; color: #888; margin-bottom: 40px">
+          Giải pháp toàn diện cho cá nhân và doanh nghiệp
+        </p>
 
-                <!-- Starter+ -->
-                <div class="pricing-card" data-aos="flip-left" data-aos-delay="200">
-                    <div class="price-title">STARTER+</div>
-                    <div class="price-tag">8.500.000 ₫</div>
-                    <ul class="price-features">
-                        <li><i class="fas fa-check"></i> Bao gồm Gói Cơ Bản</li>
-                        <li><i class="fas fa-star" style="color: gold;"></i> Hosting 1 năm</li>
-                        <li><i class="fas fa-check"></i> Animation giao diện</li>
-                        <li><i class="fas fa-check"></i> Hỗ trợ nội dung 2 tháng</li>
-                    </ul>
-                    <a href="#contact" class="btn">Chọn gói này</a>
-                </div>
+        <div class="pricing-grid">
+          <!-- Basic -->
+          <div class="pricing-card" data-aos="flip-left" data-aos-delay="100">
+            <div class="price-title">GÓI CƠ BẢN</div>
+            <div class="price-tag">6.000.000 ₫</div>
+            <ul class="price-features">
+              <li>
+                <i class="fas fa-check"></i> Website 4 trang (Home, About...)
+              </li>
+              <li><i class="fas fa-check"></i> Thiết kế Responsive</li>
+              <li><i class="fas fa-check"></i> Tối ưu SEO cơ bản</li>
+              <li><i class="fas fa-check"></i> Tích hợp Chat/Zalo/Map</li>
+              <li><i class="fas fa-check"></i> Bảo hành 1 tháng</li>
+            </ul>
+            <a href="#contact" class="btn">Chọn gói này</a>
+          </div>
 
-                <!-- Pro -->
-                <div class="pricing-card" data-aos="flip-left" data-aos-delay="300" style="border-color: var(--secondary);">
-                    <div class="price-title" style="color: var(--secondary);">GÓI PRO</div>
-                    <div class="price-tag">12.000.000 ₫</div>
-                    <ul class="price-features">
-                        <li><i class="fas fa-check"></i> Hosting 1 năm</li>
-                        <li><i class="fas fa-check"></i> Trang Tin tức / Blog</li>
-                        <li><i class="fas fa-database"></i> Trang Quản trị (Admin)</li>
-                        <li><i class="fas fa-chart-line"></i> Google Analytics + GSC</li>
-                        <li><i class="fas fa-check"></i> Hỗ trợ nội dung 2 tháng</li>
-                    </ul>
-                    <a href="#contact" class="btn" style="border-color: var(--secondary); color:var(--secondary);">Đề xuất</a>
-                </div>
+          <!-- Starter+ -->
+          <div class="pricing-card" data-aos="flip-left" data-aos-delay="200">
+            <div class="price-title">STARTER+</div>
+            <div class="price-tag">8.500.000 ₫</div>
+            <ul class="price-features">
+              <li><i class="fas fa-check"></i> Bao gồm Gói Cơ Bản</li>
+              <li>
+                <i class="fas fa-star" style="color: gold"></i> Hosting 1 năm
+              </li>
+              <li><i class="fas fa-check"></i> Animation giao diện</li>
+              <li><i class="fas fa-check"></i> Hỗ trợ nội dung 2 tháng</li>
+            </ul>
+            <a href="#contact" class="btn">Chọn gói này</a>
+          </div>
 
-                <!-- Premium -->
-                <div class="pricing-card premium" data-aos="flip-left" data-aos-delay="400">
-                    <div class="badge">BEST</div>
-                    <div class="price-title" style="color: var(--accent);">PREMIUM</div>
-                    <div class="price-tag">16.000.000 ₫</div>
-                    <ul class="price-features">
-                        <li><i class="fas fa-check"></i> Hosting 1 năm</li>
-                        <li><i class="fas fa-crown" style="color: gold;"></i> Full tính năng Admin & Blog</li>
-                        <li><i class="fas fa-magic"></i> Thiết kế theo Brand Guideline</li>
-                        <li><i class="fas fa-search"></i> SEO Nâng cao + 5 bài viết</li>
-                        <li><i class="fas fa-clock"></i> Hỗ trợ 3 tháng</li>
-                    </ul>
-                    <a href="#contact" class="btn" style="border-color: var(--accent); color: var(--accent);">VIP Contact</a>
-                </div>
+          <!-- Pro -->
+          <div
+            class="pricing-card"
+            data-aos="flip-left"
+            data-aos-delay="300"
+            style="border-color: var(--secondary)"
+          >
+            <div class="price-title" style="color: var(--secondary)">
+              GÓI PRO
             </div>
-            
-             <div style="margin-top: 50px; text-align: center; background: var(--glass); padding: 20px; border-radius: 10px;" data-aos="fade-up">
-                <h3 style="color: var(--primary);">Các dịch vụ lẻ khác</h3>
-                <p style="margin: 10px 0;">Landing Page: 1.5M - 2.5M | CMS Code thuần: 5M - 7M | Mini E-Commerce: 6M - 10M</p>
-                <p style="font-size: 0.8rem; font-style: italic;">(Bảo trì/Update: 300k - 1.2M/tháng)</p>
-             </div>
+            <div class="price-tag">12.000.000 ₫</div>
+            <ul class="price-features">
+              <li><i class="fas fa-check"></i> Hosting 1 năm</li>
+              <li><i class="fas fa-check"></i> Trang Tin tức / Blog</li>
+              <li><i class="fas fa-database"></i> Trang Quản trị (Admin)</li>
+              <li><i class="fas fa-chart-line"></i> Google Analytics + GSC</li>
+              <li><i class="fas fa-check"></i> Hỗ trợ nội dung 2 tháng</li>
+            </ul>
+            <a
+              href="#contact"
+              class="btn"
+              style="border-color: var(--secondary); color: var(--secondary)"
+              >Đề xuất</a
+            >
+          </div>
+
+          <!-- Premium -->
+          <div
+            style="display: none"
+            class="pricing-card premium"
+            data-aos="flip-left"
+            data-aos-delay="400"
+          >
+            <div class="badge">BEST</div>
+            <div class="price-title" style="color: var(--accent)">PREMIUM</div>
+            <div class="price-tag">16.000.000 ₫</div>
+            <ul class="price-features">
+              <li><i class="fas fa-check"></i> Hosting 1 năm</li>
+              <li>
+                <i class="fas fa-crown" style="color: gold"></i> Full tính năng
+                Admin & Blog
+              </li>
+              <li>
+                <i class="fas fa-magic"></i> Thiết kế theo Brand Guideline
+              </li>
+              <li><i class="fas fa-search"></i> SEO Nâng cao + 5 bài viết</li>
+              <li><i class="fas fa-clock"></i> Hỗ trợ 3 tháng</li>
+            </ul>
+            <a
+              href="#contact"
+              class="btn"
+              style="border-color: var(--accent); color: var(--accent)"
+              >VIP Contact</a
+            >
+          </div>
         </div>
+
+        <div
+          style="
+            margin-top: 50px;
+            text-align: center;
+            background: var(--glass);
+            padding: 20px;
+            border-radius: 10px;
+          "
+          data-aos="fade-up"
+        >
+          <h3 style="color: var(--primary)">Các dịch vụ lẻ khác</h3>
+          <p style="margin: 10px 0">
+            Landing Page: 1.5M - 2.5M | CMS Code thuần: 5M - 7M | Mini
+            E-Commerce: 6M - 10M
+          </p>
+          <p style="font-size: 0.8rem; font-style: italic">
+            (Bảo trì/Update: 300k - 1.2M/tháng)
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- PROJECTS SECTION -->
     <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Dự Án Tiêu Biểu</h2>
-            
-            <h3 style="margin-bottom: 20px; border-left: 3px solid var(--primary); padding-left: 10px;">Doanh Nghiệp / Landing Page</h3>
-            <div class="project-grid" style="margin-bottom: 40px;">
-                
-                <div class="project-card" data-aos="fade-up">
-                    <div class="project-info">
-                        <h4 class="project-title">MCTalent</h4>
-                        <div class="tech-tags">
-                            <span>ASP.NET</span><span>SQL</span><span>Frontend</span>
-                        </div>
-                        <p class="project-desc">Website giới thiệu công ty, quản lý talent.</p>
-                        <a href="https://mctalent.vn/" target="_blank" class="btn" style="padding: 5px 15px; font-size: 0.8rem;">Live Demo</a>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Dự Án Tiêu Biểu</h2>
 
-                 <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-info">
-                        <h4 class="project-title">Just In Time</h4>
-                        <div class="tech-tags">
-                            <span>C#</span><span>Corporate</span>
-                        </div>
-                        <p class="project-desc">Giải pháp quản lý và giới thiệu doanh nghiệp.</p>
-                        <a href="https://justintimevn.com/" target="_blank" class="btn" style="padding: 5px 15px; font-size: 0.8rem;">Live Demo</a>
-                    </div>
-                </div>
-
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-info">
-                        <h4 class="project-title">Hocons</h4>
-                        <div class="tech-tags">
-                            <span>WebForm</span><span>CSS</span>
-                        </div>
-                        <p class="project-desc">Website xây dựng, dự án.</p>
-                        <a href="https://hocons.com.vn/" target="_blank" class="btn" style="padding: 5px 15px; font-size: 0.8rem;">Live Demo</a>
-                    </div>
-                </div>
+        <!-- Landing Page Section -->
+        <h3
+          style="
+            margin-bottom: 20px;
+            border-left: 3px solid var(--primary);
+            padding-left: 10px;
+          "
+        >
+          Landing Page
+        </h3>
+        <div class="project-grid" style="margin-bottom: 40px">
+          <div class="project-card" data-aos="fade-up" style="display: none">
+            <div class="project-info">
+              <h4 class="project-title">TMDT xVnet</h4>
+              <div class="tech-tags">
+                <span>Landing</span><span>E-Commerce</span>
+              </div>
+              <p class="project-desc">Trang giới thiệu thương mại điện tử.</p>
+              <a
+                href="http://tmdt.xvnet.vn/"
+                target="_blank"
+                class="btn"
+                style="padding: 5px 15px; font-size: 0.8rem"
+                >Live Demo</a
+              >
             </div>
+          </div>
 
-            <h3 style="margin-bottom: 20px; border-left: 3px solid var(--accent); padding-left: 10px;">E-Commerce / Others</h3>
-            <div class="project-grid">
-                 <div class="project-card" data-aos="fade-up">
-                    <div class="project-info">
-                        <h4 class="project-title">Minh Phat Audio</h4>
-                        <div class="tech-tags">
-                            <span>Shop Mini</span><span>SEO</span>
-                        </div>
-                        <p class="project-desc">Cửa hàng thiết bị âm thanh trực tuyến.</p>
-                        <a href="https://minhphataudio.com/" target="_blank" class="btn" style="padding: 5px 15px; font-size: 0.8rem;">Live Demo</a>
-                    </div>
-                </div>
-                
-                 <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-info">
-                        <h4 class="project-title">Management App</h4>
-                        <div class="tech-tags">
-                            <span>NextJS</span><span>Postgres</span><span>Vercel</span>
-                        </div>
-                        <p class="project-desc">Quản lý đề tài thực nghiệm trung tâm (Login: tanbgd@gmail.com).</p>
-                        <a href="https://dacn-phong-thi-nghiem.vercel.app" target="_blank" class="btn" style="padding: 5px 15px; font-size: 0.8rem;">App Demo</a>
-                    </div>
-                </div>
+          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-info">
+              <h4 class="project-title">Dũng CiCon</h4>
+              <div class="tech-tags">
+                <span>Landing</span><span>Product</span>
+              </div>
+              <p class="project-desc">Trang giới thiệu sản phẩm công ty.</p>
+              <a
+                href="https://dungcicon.com/"
+                target="_blank"
+                class="btn"
+                style="padding: 5px 15px; font-size: 0.8rem"
+                >Live Demo</a
+              >
             </div>
+          </div>
 
+          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-info">
+              <h4 class="project-title">Trại Hè PacGroup</h4>
+              <div class="tech-tags">
+                <span>Landing</span><span>Travel</span>
+              </div>
+              <p class="project-desc">Trang giới thiệu chuyến trải nghiệm hè cho trẻ.</p>
+              <a
+                href="https://traihe.pacgroup.org/"
+                target="_blank"
+                class="btn"
+                style="padding: 5px 15px; font-size: 0.8rem"
+                >Live Demo</a
+              >
+            </div>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-info">
+              <h4 class="project-title">Xanh Island</h4>
+              <div class="tech-tags">
+                <span>Landing</span><span>Resort</span>
+              </div>
+              <p class="project-desc">Trang giới thiệu khu resort.</p>
+              <a
+                href="https://xanhisland.superland.vn/"
+                target="_blank"
+                class="btn"
+                style="padding: 5px 15px; font-size: 0.8rem"
+                >Live Demo</a
+              >
+            </div>
+          </div>
         </div>
+
+        <!-- Website Doanh Nghiệp Section -->
+        <h3
+          style="
+            margin-bottom: 20px;
+            border-left: 3px solid var(--secondary);
+            padding-left: 10px;
+          "
+        >
+          Website Doanh Nghiệp
+        </h3>
+        <div class="project-grid" style="margin-bottom: 40px">
+          <div class="project-card" data-aos="fade-up">
+            <div class="project-info">
+              <h4 class="project-title">MCTalent</h4>
+              <div class="tech-tags">
+                <span>ASP.NET</span><span>SQL</span><span>Frontend</span>
+              </div>
+              <p class="project-desc">
+                Website giới thiệu công ty, quản lý talent.
+              </p>
+              <a
+                href="https://mctalent.vn/"
+                target="_blank"
+                class="btn"
+                style="padding: 5px 15px; font-size: 0.8rem"
+                >Live Demo</a
+              >
+            </div>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-info">
+              <h4 class="project-title">Mikawa</h4>
+              <div class="tech-tags">
+                <span>Corporate</span><span>Profile</span>
+              </div>
+              <p class="project-desc">Website giới thiệu công ty Mikawa.</p>
+              <a
+                href="https://mikawa.vn/"
+                target="_blank"
+                class="btn"
+                style="padding: 5px 15px; font-size: 0.8rem"
+                >Live Demo</a
+              >
+            </div>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-info">
+              <h4 class="project-title">Superland</h4>
+              <div class="tech-tags">
+                <span>Corporate</span><span>Real Estate</span>
+              </div>
+              <p class="project-desc">Website bất động sản Superland.</p>
+              <a
+                href="https://superland.vn/"
+                target="_blank"
+                class="btn"
+                style="padding: 5px 15px; font-size: 0.8rem"
+                >Live Demo</a
+              >
+            </div>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-info">
+              <h4 class="project-title">Just In Time</h4>
+              <div class="tech-tags"><span>C#</span><span>Corporate</span></div>
+              <p class="project-desc">
+                Giải pháp quản lý và giới thiệu doanh nghiệp.
+              </p>
+              <a
+                href="https://justintimevn.com/"
+                target="_blank"
+                class="btn"
+                style="padding: 5px 15px; font-size: 0.8rem"
+                >Live Demo</a
+              >
+            </div>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="project-info">
+              <h4 class="project-title">Hocons</h4>
+              <div class="tech-tags">
+                <span>WebForm</span><span>Construction</span>
+              </div>
+              <p class="project-desc">Website xây dựng, dự án.</p>
+              <a
+                href="https://hocons.com.vn/"
+                target="_blank"
+                class="btn"
+                style="padding: 5px 15px; font-size: 0.8rem"
+                >Live Demo</a
+              >
+            </div>
+          </div>
+
+          <div
+            class="project-card"
+            data-aos="fade-up"
+            data-aos-delay="500"
+            style="display: none"
+          >
+            <div class="project-info">
+              <h4 class="project-title">Tama xVnet</h4>
+              <div class="tech-tags">
+                <span>Corporate</span><span>Profile</span>
+              </div>
+              <p class="project-desc">Website giới thiệu Tama.</p>
+              <a
+                href="http://tama.xvnet.vn/"
+                target="_blank"
+                class="btn"
+                style="padding: 5px 15px; font-size: 0.8rem"
+                >Live Demo</a
+              >
+            </div>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="600">
+            <div class="project-info">
+              <h4 class="project-title">Amira Home Lodge</h4>
+              <div class="tech-tags">
+                <span>Corporate</span><span>Hotel</span>
+              </div>
+              <p class="project-desc">Website khách sạn Amira.</p>
+              <a
+                href="http://amirahomelodge.xvnet.vn/"
+                target="_blank"
+                class="btn"
+                style="padding: 5px 15px; font-size: 0.8rem"
+                >Live Demo</a
+              >
+            </div>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="700">
+            <div class="project-info">
+              <h4 class="project-title">Vinatex</h4>
+              <div class="tech-tags">
+                <span>Corporate</span><span>Textile</span>
+              </div>
+              <p class="project-desc">Website công ty dệt may Vinatex.</p>
+              <a
+                href="http://vinatexvn.xvnet.vn/"
+                target="_blank"
+                class="btn"
+                style="padding: 5px 15px; font-size: 0.8rem"
+                >Live Demo</a
+              >
+            </div>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="800">
+            <div class="project-info">
+              <h4 class="project-title">Son La Blue Mountain Coffee</h4>
+              <div class="tech-tags">
+                <span>Corporate</span><span>Coffee</span>
+              </div>
+              <p class="project-desc">Website cà phê Sơn La Blue Mountain.</p>
+              <a
+                href="http://sonlabluemountaincoffee.xvnet.vn/"
+                target="_blank"
+                class="btn"
+                style="padding: 5px 15px; font-size: 0.8rem"
+                >Live Demo</a
+              >
+            </div>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="900">
+            <div class="project-info">
+              <h4 class="project-title">PSCS xVnet</h4>
+              <div class="tech-tags">
+                <span>Corporate</span><span>Services</span>
+              </div>
+              <p class="project-desc">Website dịch vụ PSCS.</p>
+              <a
+                href="http://pscs.xvnet.vn/"
+                target="_blank"
+                class="btn"
+                style="padding: 5px 15px; font-size: 0.8rem"
+                >Live Demo</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Shop Bán Hàng Mini Section -->
+        <h3
+          style="
+            margin-bottom: 20px;
+            border-left: 3px solid var(--accent);
+            padding-left: 10px;
+          "
+        >
+          Shop Bán Hàng Mini
+        </h3>
+        <div class="project-grid" style="margin-bottom: 40px">
+          <div class="project-card" data-aos="fade-up">
+            <div class="project-info">
+              <h4 class="project-title">Minh Phat Audio</h4>
+              <div class="tech-tags">
+                <span>Shop Mini</span><span>SEO</span>
+              </div>
+              <p class="project-desc">Cửa hàng thiết bị âm thanh trực tuyến.</p>
+              <a
+                href="https://minhphataudio.com/"
+                target="_blank"
+                class="btn"
+                style="padding: 5px 15px; font-size: 0.8rem"
+                >Live Demo</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Others Section -->
+        <h3
+          style="
+            margin-bottom: 20px;
+            border-left: 3px solid #00d4ff;
+            padding-left: 10px;
+          "
+        >
+          Others / Ứng Dụng Khác
+        </h3>
+        <div class="project-grid">
+          <div class="project-card" data-aos="fade-up">
+            <div class="project-info">
+              <h4 class="project-title">Management App</h4>
+              <div class="tech-tags">
+                <span>NextJS</span><span>Postgres</span><span>Vercel</span>
+              </div>
+              <p class="project-desc">
+                Quản lý đề tài thực nghiệm trung tâm (Login: tanbgd@gmail.com).
+              </p>
+              <a
+                href="https://dacn-phong-thi-nghiem.vercel.app"
+                target="_blank"
+                class="btn"
+                style="padding: 5px 15px; font-size: 0.8rem"
+                >App Demo</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Liên Hệ</h2>
-            
-            <div class="contact-box" data-aos="zoom-in">
-                <div class="contact-item">
-                    <i class="fas fa-phone-alt"></i> 0916 467 039
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i> tannguyen0916@gmail.com
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i> Tân Phú, TP.HCM
-                </div>
-                
-                <div class="social-links" style="margin-top: 30px;">
-                    <a href="https://github.com/tandzp0o" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="#" target="_blank"><i class="fas fa-comment-dots"></i></a>
-                </div>
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Liên Hệ</h2>
 
-                <p style="margin-top: 20px; font-size: 0.9rem; color: #888;">
-                    * Bên B hoạt động độc lập, không phát hành hóa đơn VAT.
-                </p>
-            </div>
+        <div class="contact-box" data-aos="zoom-in">
+          <div class="contact-item">
+            <i class="fas fa-phone-alt"></i> 0916 467 039
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i> tannguyen0916@gmail.com
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i> Tân Phú, TP.HCM
+          </div>
+
+          <div class="social-links" style="margin-top: 30px">
+            <a href="https://github.com/tandzp0o" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fas fa-comment-dots"></i></a>
+          </div>
+
+          <p style="margin-top: 20px; font-size: 0.9rem; color: #888">
+            * Bên B hoạt động độc lập, không phát hành hóa đơn VAT.
+          </p>
         </div>
+      </div>
     </section>
 
     <footer>
-        <p>© 2025 Lê Trương Trọng Tấn | Freelancer Web Developer</p>
-        <p style="font-size: 0.8rem; opacity: 0.5;">Designed with <i class="fas fa-heart" style="color: var(--accent)"></i> and Code</p>
+      <p>© 2025 Lê Trương Trọng Tấn | Freelancer Web Developer</p>
+      <p style="font-size: 0.8rem; opacity: 0.5">
+        Designed with
+        <i class="fas fa-heart" style="color: var(--accent)"></i> and Code
+      </p>
     </footer>
 
     <!-- Liên kết Library và File JS riêng -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
