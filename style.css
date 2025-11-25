@@ -3,7 +3,8 @@
   --bg-color: #050505;
   --text-color: #e0e0e0;
   --primary: #00f3ff; /* Cyan Neon */
-  --secondary: #bc13fe; /* Purple Neon */
+  --secondary: #05af60; /* Purple Neon */
+  /* --secondary: #bc13fe;  */
   --accent: #ff0055; /* Red Neon */
   --glass: rgba(255, 255, 255, 0.05);
   --border: rgba(255, 255, 255, 0.1);
@@ -58,7 +59,7 @@ body {
   -webkit-text-fill-color: transparent;
   position: relative;
   display: inline-block;
-  left: 50%;
+  /* left: 50%; */
   transform: translateX(-50%);
   width: 100%; /* Fix lỗi hiển thị trên mobile */
 }
@@ -173,11 +174,21 @@ nav .container {
 }
 
 @keyframes glitch-skew {
-  0% { transform: skew(0deg); }
-  10% { transform: skew(2deg); }
-  20% { transform: skew(-2deg); }
-  30% { transform: skew(0deg); }
-  100% { transform: skew(0deg); }
+  0% {
+    transform: skew(0deg);
+  }
+  10% {
+    transform: skew(2deg);
+  }
+  20% {
+    transform: skew(-2deg);
+  }
+  30% {
+    transform: skew(0deg);
+  }
+  100% {
+    transform: skew(0deg);
+  }
 }
 
 /* --- ABOUT SECTION --- */
@@ -252,8 +263,8 @@ nav .container {
 }
 
 .skill-item:hover i {
-  color: var(--primary);
-  filter: drop-shadow(0 0 5px var(--primary));
+  /* color: var(--primary); */
+  filter: drop-shadow(0 0 5px rgba(253, 254, 255, 0.849));
 }
 
 /* --- SERVICES & PRICING --- */
@@ -264,7 +275,7 @@ nav .container {
 .pricing-grid {
   display: grid;
   /* Chuyển sang minmax nhỏ hơn để responsive tốt hơn */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
@@ -345,10 +356,26 @@ nav .container {
   background: rgba(0, 0, 0, 0.3);
 }
 
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+.project-slide {
+  display: block;
   gap: 30px;
+  margin-left: 0;
+}
+
+.project-slide .slick-slide {
+  margin: 0 15px; /* tổng khoảng cách = 30px */
+}
+
+.project-slide .slick-list {
+  margin: 0 -15px; /* để hai mép ngoài không bị lệch */
+}
+
+.project-slide .slick-track {
+  margin: 0;
+}
+
+.project-slide .slick-dots li button:before {
+  color: white !important;
 }
 
 .project-card {
@@ -375,6 +402,10 @@ nav .container {
 }
 
 .project-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
   font-family: var(--font-tech);
   font-size: 1.4rem;
   color: var(--primary);
@@ -382,10 +413,16 @@ nav .container {
 }
 
 .project-desc {
-  margin-top: 15px;
+  /* height: 45px; */
+  /* giới hạn 2 dòng */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  /* margin-top: 15px; */
   font-size: 0.95rem;
   color: #ccc;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   line-height: 1.5;
   flex-grow: 1;
 }
@@ -451,6 +488,100 @@ nav .container {
   transition: 0.3s;
 }
 
+/* --- CONTACT FORM --- */
+.contact-form {
+  background: var(--glass);
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 243, 255, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-family: var(--font-tech);
+  font-size: 0.9rem;
+  color: var(--primary);
+  margin-bottom: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  color: var(--text-color);
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: all 0.3s;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+}
+
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300f3ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+  padding-right: 40px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: var(--font-body);
+}
+
+.contact-form .btn {
+  margin-top: 10px;
+  border-color: var(--primary);
+  color: var(--primary);
+  transition: all 0.3s;
+}
+
+.contact-form .btn:hover {
+  background: var(--primary);
+  color: #000;
+  box-shadow: 0 0 20px var(--primary);
+}
+
+#formStatus {
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+#formStatus.success {
+  background: rgba(5, 175, 96, 0.2);
+  color: #05af60;
+  border: 1px solid #05af60;
+}
+
+#formStatus.error {
+  background: rgba(255, 0, 85, 0.2);
+  color: #ff0055;
+  border: 1px solid #ff0055;
+}
+
 footer {
   text-align: center;
   padding: 30px 20px;
@@ -478,12 +609,17 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  /* Contact grid chuyển 1 cột */
+  section.contact > div > div {
+    grid-template-columns: 1fr !important;
+  }
+
   /* Navigation: Đẩy menu xuống thành 2 dòng (Logo trên, Link dưới) */
   nav .container {
     flex-direction: column;
     gap: 15px;
   }
-  
+
   .nav-links {
     width: 100%;
     display: flex;
@@ -501,7 +637,7 @@ footer {
   .hero {
     padding-top: 140px; /* Tăng padding top để tránh menu đè lên */
   }
-  
+
   .hero-content h1 {
     font-size: 2.4rem;
   }
@@ -509,13 +645,17 @@ footer {
   .hero-content h1 span {
     margin-top: 20px;
   }
-  
+
   .hero-content p {
     font-size: 1.2rem;
   }
-  
+
   /* Giảm khoảng cách section */
-  .about, .services, .projects, .contact, .skills {
+  .about,
+  .services,
+  .projects,
+  .contact,
+  .skills {
     padding: 60px 0;
   }
 }
@@ -536,20 +676,20 @@ footer {
     font-size: 1rem;
     letter-spacing: 1px;
   }
-  
+
   /* Các nút bấm to ra full màn hình để dễ ấn */
   .btn {
     width: 100%;
     display: block;
     margin-bottom: 10px;
   }
-  
+
   /* Căn chỉnh lại các nút ở Hero section */
   .hero-content .btn {
     margin-left: 0 !important; /* Bỏ margin-left cũ */
     margin-top: 10px;
   }
-  
+
   /* Navigation: Link nhỏ lại */
   .nav-links a {
     font-size: 0.85rem;
@@ -558,7 +698,7 @@ footer {
   }
 
   /* Pricing & Projects: Chắc chắn hiển thị 1 cột */
-  .pricing-grid, 
+  .pricing-grid,
   .project-grid {
     grid-template-columns: 1fr; /* Bắt buộc 1 cột */
   }
@@ -567,12 +707,12 @@ footer {
   .skills-grid {
     gap: 15px;
   }
-  
+
   .skill-item {
     width: 80px; /* Icon bé lại xíu */
     height: 90px;
   }
-  
+
   .skill-item i {
     font-size: 2rem;
   }
@@ -581,13 +721,13 @@ footer {
   .contact-box {
     padding: 30px 15px;
   }
-  
+
   .contact-item {
     font-size: 1rem;
     flex-direction: column; /* Icon trên chữ dưới cho dễ đọc */
     gap: 5px;
   }
-  
+
   .contact-item i {
     margin-right: 0;
     margin-bottom: 5px;

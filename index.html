@@ -44,6 +44,10 @@
     <!-- Animation Library (AOS) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+    <!-- Slick Carousel (Mobile Project Grid) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
     <!-- Liên kết đến file CSS riêng -->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -134,7 +138,7 @@
               <h4 style="color: var(--primary)">
                 04/2025 - 09/2025 | Mạng Xuyên Việt
               </h4>
-              <h3>Developer (Fresher)</h3>
+              <h3>Developer</h3>
               <p style="font-size: 0.9rem; color: #aaa">
                 Phát triển Website, Landing Page, tối ưu hóa hệ thống cho khách
                 hàng.
@@ -144,7 +148,7 @@
               <h4 style="color: var(--primary)">
                 09/2024 - 12/2024 | Long Phát CRM
               </h4>
-              <h3>Developer (Intern)</h3>
+              <h3>Developer</h3>
               <p style="font-size: 0.9rem; color: #aaa">
                 Web Dev (PHP/JS), SuiteCRM, quản lý database.
               </p>
@@ -362,7 +366,7 @@
         >
           Landing Page
         </h3>
-        <div class="project-grid" style="margin-bottom: 40px">
+        <div class="project-slide" style="margin-bottom: 40px">
           <div class="project-card" data-aos="fade-up" style="display: none">
             <div class="project-info">
               <h4 class="project-title">TMDT xVnet</h4>
@@ -384,7 +388,7 @@
             <div class="project-info">
               <h4 class="project-title">Dũng CiCon</h4>
               <div class="tech-tags">
-                <span>Landing</span><span>Product</span>
+                <span>Landing</span><span>Book</span>
               </div>
               <p class="project-desc">Trang giới thiệu sản phẩm công ty.</p>
               <a
@@ -442,7 +446,7 @@
         >
           Website Doanh Nghiệp
         </h3>
-        <div class="project-grid" style="margin-bottom: 40px">
+        <div class="project-slide" style="margin-bottom: 40px">
           <div class="project-card" data-aos="fade-up">
             <div class="project-info">
               <h4 class="project-title">MCTalent</h4>
@@ -603,22 +607,7 @@
             </div>
           </div>
 
-          <div class="project-card" data-aos="fade-up" data-aos-delay="900">
-            <div class="project-info">
-              <h4 class="project-title">PSCS xVnet</h4>
-              <div class="tech-tags">
-                <span>Corporate</span><span>Services</span>
-              </div>
-              <p class="project-desc">Website dịch vụ PSCS.</p>
-              <a
-                href="http://pscs.xvnet.vn/"
-                target="_blank"
-                class="btn"
-                style="padding: 5px 15px; font-size: 0.8rem"
-                >Live Demo</a
-              >
-            </div>
-          </div>
+          
         </div>
 
         <!-- Shop Bán Hàng Mini Section -->
@@ -631,7 +620,7 @@
         >
           Shop Bán Hàng Mini
         </h3>
-        <div class="project-grid" style="margin-bottom: 40px">
+        <div class="project-slide" style="margin-bottom: 40px">
           <div class="project-card" data-aos="fade-up">
             <div class="project-info">
               <h4 class="project-title">Minh Phat Audio</h4>
@@ -641,6 +630,23 @@
               <p class="project-desc">Cửa hàng thiết bị âm thanh trực tuyến.</p>
               <a
                 href="https://minhphataudio.com/"
+                target="_blank"
+                class="btn"
+                style="padding: 5px 15px; font-size: 0.8rem"
+                >Live Demo</a
+              >
+            </div>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="900">
+            <div class="project-info">
+              <h4 class="project-title">PSCS Việt Nam</h4>
+              <div class="tech-tags">
+                <span>Corporate</span><span>Services</span>
+              </div>
+              <p class="project-desc">Website sản phẩm máy tự động công nghiệp.</p>
+              <a
+                href="http://pscs.xvnet.vn/"
                 target="_blank"
                 class="btn"
                 style="padding: 5px 15px; font-size: 0.8rem"
@@ -660,7 +666,7 @@
         >
           Others / Ứng Dụng Khác
         </h3>
-        <div class="project-grid">
+        <div class="project-slide">
           <div class="project-card" data-aos="fade-up">
             <div class="project-info">
               <h4 class="project-title">Management App</h4>
@@ -688,28 +694,70 @@
       <div class="container">
         <h2 class="section-title" data-aos="fade-up">Liên Hệ</h2>
 
-        <div class="contact-box" data-aos="zoom-in">
-          <div class="contact-item">
-            <i class="fas fa-phone-alt"></i> 0916 467 039
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i> tannguyen0916@gmail.com
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-map-marker-alt"></i> Tân Phú, TP.HCM
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; max-width: 900px; margin: 0 auto;">
+          <!-- Contact Info -->
+          <div class="contact-box" data-aos="zoom-in">
+            <div class="contact-item">
+              <i class="fas fa-phone-alt"></i> 0916 467 039
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i> tannguyen0916@gmail.com
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i> Tân Phú, TP.HCM
+            </div>
+
+            <div class="social-links" style="margin-top: 30px">
+              <a href="https://github.com/tandzp0o" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a href="#" target="_blank"><i class="fas fa-comment-dots"></i></a>
+            </div>
+
+            <p style="margin-top: 20px; font-size: 0.9rem; color: #888">
+              * Bên B hoạt động độc lập, không phát hành hóa đơn VAT.
+            </p>
           </div>
 
-          <div class="social-links" style="margin-top: 30px">
-            <a href="https://github.com/tandzp0o" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
-            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="#" target="_blank"><i class="fas fa-comment-dots"></i></a>
-          </div>
+          <!-- Contact Form -->
+          <form id="contactForm" class="contact-form" data-aos="zoom-in" method="post" action="#contact">
+            <div class="form-group">
+              <label for="name">Tên của bạn *</label>
+              <input type="text" id="name" name="name" required placeholder="Nhập tên" />
+            </div>
 
-          <p style="margin-top: 20px; font-size: 0.9rem; color: #888">
-            * Bên B hoạt động độc lập, không phát hành hóa đơn VAT.
-          </p>
+            <div class="form-group">
+              <label for="phone">Số điện thoại *</label>
+              <input type="tel" id="phone" name="phone" required placeholder="0xxx xxx xxx" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com" />
+            </div>
+
+            <div class="form-group">
+              <label for="service">Gói dịch vụ quan tâm *</label>
+              <select id="service" name="service" required>
+                <option value="">-- Chọn gói dịch vụ --</option>
+                <option value="Gói Cơ Bản - 6.000.000 ₫">Gói Cơ Bản - 6.000.000 ₫</option>
+                <option value="Starter+ - 8.500.000 ₫">Starter+ - 8.500.000 ₫</option>
+                <option value="Gói PRO - 12.000.000 ₫">Gói PRO - 12.000.000 ₫</option>
+                <option value="Dịch vụ khác">Dịch vụ khác</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Nội dung tin nhắn *</label>
+              <textarea id="message" name="message" required placeholder="Nội dung chi tiết dự án của bạn..." rows="5"></textarea>
+            </div>
+
+            <button type="submit" class="btn" style="width: 100%; cursor: pointer;">
+              <i class="fas fa-paper-plane"></i> Gửi Tin Nhắn
+            </button>
+            <p id="formStatus" style="margin-top: 10px; text-align: center; font-size: 0.9rem; display: none;"></p>
+          </form>
         </div>
       </div>
     </section>
@@ -724,6 +772,12 @@
 
     <!-- Liên kết Library và File JS riêng -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- jQuery (required by Slick Carousel) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- EmailJS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
