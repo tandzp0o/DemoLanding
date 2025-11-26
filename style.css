@@ -585,6 +585,18 @@ nav .container {
   border: 1px solid #ff0055;
 }
 
+/* Field-level error styles */
+.input-error {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 12px rgba(255, 0, 85, 0.12) !important;
+}
+
+.field-error-msg {
+  color: #ff7aa2;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
 footer {
   text-align: center;
   padding: 30px 20px;

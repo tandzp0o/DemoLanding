@@ -116,7 +116,8 @@ function initProjectCarousel() {
     infinite: true,
     dots: true,
     arrows: true,
-    autoplay: false,
+    autoplay: true,
+    speed: 1000,
     adaptiveHeight: true,
     spaceBetween: 20,
     responsive: [
@@ -234,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.history.replaceState({}, document.title, newUrl);
       }
     } catch (err) {
-      console.warn('clearUrlQuery failed', err);
+      console.warn("clearUrlQuery failed", err);
     }
   }
 
@@ -256,20 +257,13 @@ document.addEventListener("DOMContentLoaded", () => {
         message: document.getElementById("message").value.trim(),
       };
 
-      // Validation
-      if (
-        !formData.name ||
-        !formData.phone ||
-        !formData.email ||
-        !formData.service ||
-        !formData.message
-      ) {
-        showFormStatus("Vui lòng điền đầy đủ tất cả các trường", "error");
-        return;
-      }
-
-      if (!isValidEmail(formData.email)) {
-        showFormStatus("Email không hợp lệ", "error");
+      // Field-level validation
+      clearFieldErrors();
+      const validation = validateContactForm(formData);
+      if (!validation.valid) {
+        showFormStatus(validation.message, "error");
+        if (validation.field)
+          setFieldError(validation.field, validation.message);
         return;
       }
 
@@ -351,4 +345,93 @@ function showFormStatus(message, type) {
 function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
+}
+
+// Validate contact form fields and return { valid, field, message }
+function validateContactForm(data) {
+  if (!data.name || data.name.length < 2) {
+    return {
+      valid: false,
+      field: "name",
+      message: "Vui lòng nhập tên hợp lệ (ít nhất 2 ký tự)",
+    };
+  }
+
+  if (!data.phone) {
+    return {
+      valid: false,
+      field: "phone",
+      message: "Vui lòng nhập số điện thoại",
+    };
+  }
+  // Basic phone validation: allow +84 or 0 followed by 9-10 digits
+  const phoneRegex = /^(?:\+84|0)\d{9,10}$/;
+  if (!phoneRegex.test(data.phone.replace(/\s+/g, ""))) {
+    return {
+      valid: false,
+      field: "phone",
+      message: "Số điện thoại không hợp lệ",
+    };
+  }
+
+  if (!data.email) {
+    return { valid: false, field: "email", message: "Vui lòng nhập email" };
+  }
+  if (!isValidEmail(data.email)) {
+    return { valid: false, field: "email", message: "Email không hợp lệ" };
+  }
+
+  if (!data.service) {
+    return {
+      valid: false,
+      field: "service",
+      message: "Vui lòng chọn gói dịch vụ",
+    };
+  }
+
+  if (!data.message || data.message.length < 10) {
+    return {
+      valid: false,
+      field: "message",
+      message: "Vui lòng nhập nội dung chi tiết (ít nhất 10 ký tự)",
+    };
+  }
+
+  return { valid: true };
+}
+
+function setFieldError(fieldId, message) {
+  try {
+    const el = document.getElementById(fieldId);
+    if (!el) return;
+    el.classList.add("input-error");
+    el.setAttribute("aria-invalid", "true");
+    // add inline small message if not exists
+    let next = el.nextElementSibling;
+    if (
+      !next ||
+      !next.classList ||
+      !next.classList.contains("field-error-msg")
+    ) {
+      const small = document.createElement("div");
+      small.className = "field-error-msg";
+      small.textContent = message;
+      el.parentNode.insertBefore(small, el.nextSibling);
+    } else {
+      next.textContent = message;
+    }
+    el.focus();
+  } catch (err) {
+    console.warn("setFieldError failed", err);
+  }
+}
+
+function clearFieldErrors() {
+  const errEls = document.querySelectorAll(".input-error");
+  errEls.forEach((el) => {
+    el.classList.remove("input-error");
+    el.removeAttribute("aria-invalid");
+  });
+  const msgs = document.querySelectorAll(".field-error-msg");
+  msgs.forEach((m) => m.remove());
 }
