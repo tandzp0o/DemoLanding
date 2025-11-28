@@ -121,6 +121,19 @@ nav .container {
   color: var(--primary);
   font-weight: 900;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-logo {
+  height: 36px;
+  width: auto;
+  display: inline-block;
+}
+
+.logo-text {
+  display: inline-block;
 }
 
 .nav-links a {
